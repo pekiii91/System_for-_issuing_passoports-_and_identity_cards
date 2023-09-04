@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DokumentaPasos.Models.IzdavanjePasosa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista izdavanja pasoša</h2>
+
+<p>
+    @Html.ActionLink("Kreiranje novog izdavanja pasoša", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LicnaKarta)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Fotografija)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.IzvodMaticneKnjigeRodjenih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UverenjeODrzavljanstvu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UplataZaPasos)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicnaKarta)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Fotografija)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.IzvodMaticneKnjigeRodjenih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UverenjeODrzavljanstvu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UplataZaPasos)
+            </td>
+            <td>
+                @Html.ActionLink("Izmeni", "Edit", new { id = item.IzdavanjePasosaID }) |
+                @Html.ActionLink("Detalji", "Details", new { id = item.IzdavanjePasosaID }) |
+                @Html.ActionLink("Obriši", "Delete", new { id = item.IzdavanjePasosaID })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>@Html.ActionLink("Pocetna strana", "Index", "Home")</div>

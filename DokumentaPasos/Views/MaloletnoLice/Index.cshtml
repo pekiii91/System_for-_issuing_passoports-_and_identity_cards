@@ -1,0 +1,66 @@
+﻿@model IEnumerable<DokumentaPasos.Models.MaloletnoLouse>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista maloletnih lica</h2>
+
+<p>
+    @Html.ActionLink("Kreiraj novo maloletno lice", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UverenjeODrzavljanstvu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IzvodMaticneKnjigeRodjenih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UplaceneNaknade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SaglasnostRoditelja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fotografija)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RokVazenja)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UverenjeODrzavljanstvu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IzvodMaticneKnjigeRodjenih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UplaceneNaknade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SaglasnostRoditelja)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fotografija)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RokVazenja)
+            </td>
+            <td>
+                @Html.ActionLink("Izmeni", "Edit", new { id = item.MaloletnoLiceID }) |
+                @Html.ActionLink("Detalji", "Details", new { id = item.MaloletnoLiceID }) |
+                @Html.ActionLink("Obriši", "Delete", new { id = item.MaloletnoLiceID })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>@Html.ActionLink("Pocetna strana", "Index", "Home")</div>
+

@@ -1,0 +1,84 @@
+﻿@model DokumentaPasos.Models.Paso
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Brisanje pasoša</h2>
+<h3>Da li ste sigurni?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IzdajePU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IzdajePU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Drzava)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Drzava)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gradjanin.Tip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gradjanin.Tip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InformacijeOPasosu.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InformacijeOPasosu.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IzgubljenPaso.PrijavaNestanka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IzgubljenPaso.PrijavaNestanka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaloletnoLouse.UverenjeODrzavljanstvu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaloletnoLouse.UverenjeODrzavljanstvu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uplata.ObrzacPutneIsprave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uplata.ObrzacPutneIsprave)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši" class="btn btn-danger" /> |
+            @Html.ActionLink("Lista pasoša", "Index")
+        </div>
+    }
+</div>

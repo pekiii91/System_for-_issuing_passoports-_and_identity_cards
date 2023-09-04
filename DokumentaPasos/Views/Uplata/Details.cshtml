@@ -1,0 +1,33 @@
+﻿@model DokumentaPasos.Models.Uplata
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Informacije u uplati</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ObrzacPutneIsprave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObrzacPutneIsprave)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdministrativnaTaksa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdministrativnaTaksa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Izmeni", "Edit", new { id = Model.UplataID }) |
+    @Html.ActionLink("Lista uplata", "Index")
+</p>

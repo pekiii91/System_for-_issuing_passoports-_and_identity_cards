@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DokumentaPasos.Models.ProduzetakPasosa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista produženih pasoša</h2>
+
+<p>
+    @Html.ActionLink("Kreiranje novog produžetka pasoša", "Create")
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.LicnaKarta)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.StariPasos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TroskoviUplate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.LicnaKarta)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.StariPasos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TroskoviUplate)
+            </td>
+            <td>
+                @Html.ActionLink("Izmeni", "Edit", new { id = item.ProduzetekPasosaID }) |
+                @Html.ActionLink("Detalji", "Details", new { id = item.ProduzetekPasosaID }) |
+                @Html.ActionLink("Obriši", "Delete", new { id = item.ProduzetekPasosaID })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>@Html.ActionLink("Pocetna strana", "Index", "Home")</div>

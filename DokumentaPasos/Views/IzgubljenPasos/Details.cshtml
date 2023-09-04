@@ -1,0 +1,41 @@
+﻿@model DokumentaPasos.Models.IzgubljenPaso
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Informacije o izgubljenim pasošima</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PrijavaNestanka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrijavaNestanka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NevazecaIsprava)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NevazecaIsprava)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VadiNoviPasos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VadiNoviPasos)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Izmeni", "Edit", new { id = Model.IzgubljenPasosID }) |
+    @Html.ActionLink("Lista izgubljenih pasoša", "Index")
+</p>

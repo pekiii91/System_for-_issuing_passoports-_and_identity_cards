@@ -1,0 +1,41 @@
+﻿@model IEnumerable<DokumentaPasos.Models.Uplata>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista svih uplata</h2>
+
+<p>
+    @Html.ActionLink("Kreiranje nove uplate", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ObrzacPutneIsprave)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdministrativnaTaksa)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ObrzacPutneIsprave)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdministrativnaTaksa)
+            </td>
+            <td>
+                @Html.ActionLink("Izmeni", "Edit", new { id = item.UplataID }) |
+                @Html.ActionLink("Detalji", "Details", new { id = item.UplataID }) |
+                @Html.ActionLink("Obriši", "Delete", new { id = item.UplataID })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>@Html.ActionLink("Pocetna strana", "Index", "Home")</div>

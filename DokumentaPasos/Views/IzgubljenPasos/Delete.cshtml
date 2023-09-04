@@ -1,0 +1,47 @@
+﻿@model DokumentaPasos.Models.IzgubljenPaso
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Brisane izgubljenog pasoša</h2>
+
+<h3>Da li ste sigurni?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PrijavaNestanka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrijavaNestanka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NevazecaIsprava)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NevazecaIsprava)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VadiNoviPasos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VadiNoviPasos)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši" class="btn btn-danger" /> 
+            @Html.ActionLink("Lista izgubljenih pasoša", "Index")
+        </div>
+    }
+</div>

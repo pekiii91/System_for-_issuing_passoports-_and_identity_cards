@@ -1,0 +1,55 @@
+﻿@model DokumentaPasos.Models.InformacijeOPasosu
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Brisanje informacija o pasošima</h2>
+
+<h3>Da li ste sigurni?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IzdavanjePasosa.IzvodMaticneKnjigeRodjenih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IzdavanjePasosa.IzvodMaticneKnjigeRodjenih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProduzetakPasosa.StariPasos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProduzetakPasosa.StariPasos)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši" class="btn btn-danger" /> |
+            @Html.ActionLink("Lista informacija o pasosima", "Index")
+        </div>
+    }
+</div>

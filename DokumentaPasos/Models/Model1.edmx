@@ -1,0 +1,1254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LicnaDokumentaPasosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Gradjanin">
+          <Key>
+            <PropertyRef Name="GradjaninID" />
+          </Key>
+          <Property Name="GradjaninID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tip" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ime" Type="nvarchar" MaxLength="50" />
+          <Property Name="Prezime" Type="nvarchar" MaxLength="50" />
+          <Property Name="JMBG" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pol" Type="nvarchar" MaxLength="50" />
+          <Property Name="DatumIzdavanja" Type="date" />
+          <Property Name="DatumRodjenja" Type="date" />
+          <Property Name="MestoRodjenja" Type="nvarchar" MaxLength="50" />
+          <Property Name="Prebivaliste" Type="nvarchar" MaxLength="50" />
+          <Property Name="KodDrzave" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaloletnoLiceID" Type="int" Nullable="false" />
+          <Property Name="VaziDo" Type="date" />
+        </EntityType>
+        <EntityType Name="InformacijeOPasosu">
+          <Key>
+            <PropertyRef Name="InformacijeOPasosuID" />
+          </Key>
+          <Property Name="InformacijeOPasosuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefon" Type="int" Nullable="false" />
+          <Property Name="IzdavanjePasosaID" Type="int" Nullable="false" />
+          <Property Name="ProduzetakPasosaID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IzdavanjePasosa">
+          <Key>
+            <PropertyRef Name="IzdavanjePasosaID" />
+          </Key>
+          <Property Name="IzdavanjePasosaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LicnaKarta" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fotografija" Type="nvarchar" MaxLength="50" />
+          <Property Name="IzvodMaticneKnjigeRodjenih" Type="nvarchar" MaxLength="50" />
+          <Property Name="UverenjeODrzavljanstvu" Type="nvarchar" MaxLength="50" />
+          <Property Name="UplataZaPasos" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="IzgubljenPasos">
+          <Key>
+            <PropertyRef Name="IzgubljenPasosID" />
+          </Key>
+          <Property Name="IzgubljenPasosID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrijavaNestanka" Type="nvarchar" MaxLength="50" />
+          <Property Name="NevazecaIsprava" Type="nvarchar" MaxLength="50" />
+          <Property Name="VadiNoviPasos" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MaloletnoLice">
+          <Key>
+            <PropertyRef Name="MaloletnoLiceID" />
+          </Key>
+          <Property Name="MaloletnoLiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UverenjeODrzavljanstvu" Type="nvarchar" MaxLength="50" />
+          <Property Name="IzvodMaticneKnjigeRodjenih" Type="nvarchar" MaxLength="50" />
+          <Property Name="UplaceneNaknade" Type="nvarchar" MaxLength="50" />
+          <Property Name="SaglasnostRoditelja" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fotografija" Type="nvarchar" MaxLength="50" />
+          <Property Name="RokVazenja" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Pasos">
+          <Key>
+            <PropertyRef Name="PasosID" />
+          </Key>
+          <Property Name="PasosID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IzdajePU" Type="nvarchar" MaxLength="50" />
+          <Property Name="Drzava" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefon" Type="int" Nullable="false" />
+          <Property Name="InformacijeOPasosuID" Type="int" Nullable="false" />
+          <Property Name="UplataID" Type="int" Nullable="false" />
+          <Property Name="GradjaninID" Type="int" Nullable="false" />
+          <Property Name="MaloletnoLiceID" Type="int" Nullable="false" />
+          <Property Name="IzgubljenPasosID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProduzetakPasosa">
+          <Key>
+            <PropertyRef Name="ProduzetekPasosaID" />
+          </Key>
+          <Property Name="ProduzetekPasosaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LicnaKarta" Type="nvarchar" MaxLength="50" />
+          <Property Name="StariPasos" Type="nvarchar" MaxLength="50" />
+          <Property Name="TroskoviUplate" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Uplata">
+          <Key>
+            <PropertyRef Name="UplataID" />
+          </Key>
+          <Property Name="UplataID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ObrzacPutneIsprave" Type="nchar" MaxLength="10" />
+          <Property Name="AdministrativnaTaksa" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwGradjanin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwGradjanin">
+          <Key>
+            <PropertyRef Name="GradjaninID" />
+            <PropertyRef Name="MaloletnoLiceID" />
+            <PropertyRef Name="Expr1" />
+          </Key>
+          <Property Name="GradjaninID" Type="int" Nullable="false" />
+          <Property Name="Tip" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ime" Type="nvarchar" MaxLength="50" />
+          <Property Name="Prezime" Type="nvarchar" MaxLength="50" />
+          <Property Name="JMBG" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pol" Type="nvarchar" MaxLength="50" />
+          <Property Name="DatumIzdavanja" Type="date" />
+          <Property Name="DatumRodjenja" Type="date" />
+          <Property Name="MestoRodjenja" Type="nvarchar" MaxLength="50" />
+          <Property Name="Prebivaliste" Type="nvarchar" MaxLength="50" />
+          <Property Name="KodDrzave" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaloletnoLiceID" Type="int" Nullable="false" />
+          <Property Name="VaziDo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Expr1" Type="int" Nullable="false" />
+          <Property Name="UverenjeODrzavljanstvu" Type="nvarchar" MaxLength="50" />
+          <Property Name="IzvodMaticneKnjigeRodjenih" Type="nvarchar" MaxLength="50" />
+          <Property Name="UplaceneNaknade" Type="nvarchar" MaxLength="50" />
+          <Property Name="SaglasnostRoditelja" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fotografija" Type="nvarchar" MaxLength="50" />
+          <Property Name="RokVazenja" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwInformacijeOPasosu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwInformacijeOPasosu">
+          <Key>
+            <PropertyRef Name="InformacijeOPasosuID" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="IzdavanjePasosaID" />
+            <PropertyRef Name="ProduzetakPasosaID" />
+          </Key>
+          <Property Name="InformacijeOPasosuID" Type="int" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefon" Type="int" Nullable="false" />
+          <Property Name="IzdavanjePasosaID" Type="int" Nullable="false" />
+          <Property Name="ProduzetakPasosaID" Type="int" Nullable="false" />
+          <Property Name="LicnaKarta" Type="nvarchar" MaxLength="50" />
+          <Property Name="IzvodMaticneKnjigeRodjenih" Type="nvarchar" MaxLength="50" />
+          <Property Name="StariPasos" Type="nvarchar" MaxLength="50" />
+          <Property Name="TroskoviUplate" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwIzdavanjePasosa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwIzdavanjePasosa">
+          <Key>
+            <PropertyRef Name="IzdavanjePasosaID" />
+          </Key>
+          <Property Name="IzdavanjePasosaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LicnaKarta" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fotografija" Type="nvarchar" MaxLength="50" />
+          <Property Name="IzvodMaticneKnjigeRodjenih" Type="nvarchar" MaxLength="50" />
+          <Property Name="UverenjeODrzavljanstvu" Type="nvarchar" MaxLength="50" />
+          <Property Name="UplataZaPasos" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwIzgubljenPasos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwIzgubljenPasos">
+          <Key>
+            <PropertyRef Name="IzgubljenPasosID" />
+          </Key>
+          <Property Name="IzgubljenPasosID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrijavaNestanka" Type="nvarchar" MaxLength="50" />
+          <Property Name="NevazecaIsprava" Type="nvarchar" MaxLength="50" />
+          <Property Name="VadiNoviPasos" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwMaloletnoLice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwMaloletnoLice">
+          <Key>
+            <PropertyRef Name="MaloletnoLiceID" />
+          </Key>
+          <Property Name="MaloletnoLiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UverenjeODrzavljanstvu" Type="nvarchar" MaxLength="50" />
+          <Property Name="IzvodMaticneKnjigeRodjenih" Type="nvarchar" MaxLength="50" />
+          <Property Name="UplaceneNaknade" Type="nvarchar" MaxLength="50" />
+          <Property Name="SaglasnostRoditelja" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fotografija" Type="nvarchar" MaxLength="50" />
+          <Property Name="RokVazenja" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwPasos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwPasos">
+          <Key>
+            <PropertyRef Name="PasosID" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="InformacijeOPasosuID" />
+            <PropertyRef Name="UplataID" />
+            <PropertyRef Name="GradjaninID" />
+            <PropertyRef Name="MaloletnoLiceID" />
+            <PropertyRef Name="IzgubljenPasosID" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="Expr4" />
+            <PropertyRef Name="Expr5" />
+            <PropertyRef Name="IzdavanjePasosaID" />
+            <PropertyRef Name="ProduzetakPasosaID" />
+          </Key>
+          <Property Name="PasosID" Type="int" Nullable="false" />
+          <Property Name="IzdajePU" Type="nvarchar" MaxLength="50" />
+          <Property Name="Drzava" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefon" Type="int" Nullable="false" />
+          <Property Name="InformacijeOPasosuID" Type="int" Nullable="false" />
+          <Property Name="UplataID" Type="int" Nullable="false" />
+          <Property Name="GradjaninID" Type="int" Nullable="false" />
+          <Property Name="MaloletnoLiceID" Type="int" Nullable="false" />
+          <Property Name="IzgubljenPasosID" Type="int" Nullable="false" />
+          <Property Name="Expr1" Type="int" Nullable="false" />
+          <Property Name="Tip" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ime" Type="nvarchar" MaxLength="50" />
+          <Property Name="Prezime" Type="nvarchar" MaxLength="50" />
+          <Property Name="JMBG" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pol" Type="nvarchar" MaxLength="50" />
+          <Property Name="DatumIzdavanja" Type="date" />
+          <Property Name="DatumRodjenja" Type="date" />
+          <Property Name="MestoRodjenja" Type="nvarchar" MaxLength="50" />
+          <Property Name="Prebivaliste" Type="nvarchar" MaxLength="50" />
+          <Property Name="KodDrzave" Type="nvarchar" MaxLength="50" />
+          <Property Name="Expr2" Type="int" Nullable="false" />
+          <Property Name="VaziDo" Type="nvarchar" MaxLength="50" />
+          <Property Name="UverenjeODrzavljanstvu" Type="nvarchar" MaxLength="50" />
+          <Property Name="IzvodMaticneKnjigeRodjenih" Type="nvarchar" MaxLength="50" />
+          <Property Name="UplaceneNaknade" Type="nvarchar" MaxLength="50" />
+          <Property Name="SaglasnostRoditelja" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fotografija" Type="nvarchar" MaxLength="50" />
+          <Property Name="RokVazenja" Type="nvarchar" MaxLength="50" />
+          <Property Name="Expr4" Type="int" Nullable="false" />
+          <Property Name="ObrzacPutneIsprave" Type="nchar" MaxLength="10" />
+          <Property Name="AdministrativnaTaksa" Type="nchar" MaxLength="10" />
+          <Property Name="Expr5" Type="int" Nullable="false" />
+          <Property Name="PrijavaNestanka" Type="nvarchar" MaxLength="50" />
+          <Property Name="NevazecaIsprava" Type="nvarchar" MaxLength="50" />
+          <Property Name="VadiNoviPasos" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="IzdavanjePasosaID" Type="int" Nullable="false" />
+          <Property Name="ProduzetakPasosaID" Type="int" Nullable="false" />
+          <Property Name="LicnaKarta" Type="nvarchar" MaxLength="50" />
+          <Property Name="Expr6" Type="nvarchar" MaxLength="50" />
+          <Property Name="Expr7" Type="nvarchar" MaxLength="50" />
+          <Property Name="UplataZaPasos" Type="nvarchar" MaxLength="50" />
+          <Property Name="StariPasos" Type="nvarchar" MaxLength="50" />
+          <Property Name="TroskoviUplate" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwProduzetakPasosa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwProduzetakPasosa">
+          <Key>
+            <PropertyRef Name="ProduzetekPasosaID" />
+          </Key>
+          <Property Name="ProduzetekPasosaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LicnaKarta" Type="nvarchar" MaxLength="50" />
+          <Property Name="StariPasos" Type="nvarchar" MaxLength="50" />
+          <Property Name="TroskoviUplate" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwUplata">
+          <Key>
+            <PropertyRef Name="UplataID" />
+          </Key>
+          <Property Name="UplataID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ObrzacPutneIsprave" Type="nchar" MaxLength="10" />
+          <Property Name="AdministrativnaTaksa" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_Gradjanin_MaloletnoLice">
+          <End Role="MaloletnoLice" Type="Self.MaloletnoLice" Multiplicity="1" />
+          <End Role="Gradjanin" Type="Self.Gradjanin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaloletnoLice">
+              <PropertyRef Name="MaloletnoLiceID" />
+            </Principal>
+            <Dependent Role="Gradjanin">
+              <PropertyRef Name="MaloletnoLiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InformacijeOPasosu_IzdavanjePasosa">
+          <End Role="IzdavanjePasosa" Type="Self.IzdavanjePasosa" Multiplicity="1" />
+          <End Role="InformacijeOPasosu" Type="Self.InformacijeOPasosu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IzdavanjePasosa">
+              <PropertyRef Name="IzdavanjePasosaID" />
+            </Principal>
+            <Dependent Role="InformacijeOPasosu">
+              <PropertyRef Name="IzdavanjePasosaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InformacijeOPasosu_ProduzetakPasosa">
+          <End Role="ProduzetakPasosa" Type="Self.ProduzetakPasosa" Multiplicity="1" />
+          <End Role="InformacijeOPasosu" Type="Self.InformacijeOPasosu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProduzetakPasosa">
+              <PropertyRef Name="ProduzetekPasosaID" />
+            </Principal>
+            <Dependent Role="InformacijeOPasosu">
+              <PropertyRef Name="ProduzetakPasosaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pasos_Gradjanin">
+          <End Role="Gradjanin" Type="Self.Gradjanin" Multiplicity="1" />
+          <End Role="Pasos" Type="Self.Pasos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gradjanin">
+              <PropertyRef Name="GradjaninID" />
+            </Principal>
+            <Dependent Role="Pasos">
+              <PropertyRef Name="GradjaninID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pasos_InformacijeOPasosu">
+          <End Role="InformacijeOPasosu" Type="Self.InformacijeOPasosu" Multiplicity="1" />
+          <End Role="Pasos" Type="Self.Pasos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InformacijeOPasosu">
+              <PropertyRef Name="InformacijeOPasosuID" />
+            </Principal>
+            <Dependent Role="Pasos">
+              <PropertyRef Name="InformacijeOPasosuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pasos_IzgubljenPasos">
+          <End Role="IzgubljenPasos" Type="Self.IzgubljenPasos" Multiplicity="1" />
+          <End Role="Pasos" Type="Self.Pasos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IzgubljenPasos">
+              <PropertyRef Name="IzgubljenPasosID" />
+            </Principal>
+            <Dependent Role="Pasos">
+              <PropertyRef Name="IzgubljenPasosID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pasos_MaloletnoLice">
+          <End Role="MaloletnoLice" Type="Self.MaloletnoLice" Multiplicity="1" />
+          <End Role="Pasos" Type="Self.Pasos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaloletnoLice">
+              <PropertyRef Name="MaloletnoLiceID" />
+            </Principal>
+            <Dependent Role="Pasos">
+              <PropertyRef Name="MaloletnoLiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pasos_Uplata">
+          <End Role="Uplata" Type="Self.Uplata" Multiplicity="1" />
+          <End Role="Pasos" Type="Self.Pasos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uplata">
+              <PropertyRef Name="UplataID" />
+            </Principal>
+            <Dependent Role="Pasos">
+              <PropertyRef Name="UplataID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LicnaDokumentaPasosModelStoreContainer">
+          <EntitySet Name="Gradjanin" EntityType="Self.Gradjanin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InformacijeOPasosu" EntityType="Self.InformacijeOPasosu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IzdavanjePasosa" EntityType="Self.IzdavanjePasosa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IzgubljenPasos" EntityType="Self.IzgubljenPasos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaloletnoLice" EntityType="Self.MaloletnoLice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pasos" EntityType="Self.Pasos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProduzetakPasosa" EntityType="Self.ProduzetakPasosa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uplata" EntityType="Self.Uplata" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vwGradjanin" EntityType="Self.vwGradjanin" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwGradjanin].[GradjaninID] AS [GradjaninID], 
+    [vwGradjanin].[Tip] AS [Tip], 
+    [vwGradjanin].[Ime] AS [Ime], 
+    [vwGradjanin].[Prezime] AS [Prezime], 
+    [vwGradjanin].[JMBG] AS [JMBG], 
+    [vwGradjanin].[Pol] AS [Pol], 
+    [vwGradjanin].[DatumIzdavanja] AS [DatumIzdavanja], 
+    [vwGradjanin].[DatumRodjenja] AS [DatumRodjenja], 
+    [vwGradjanin].[MestoRodjenja] AS [MestoRodjenja], 
+    [vwGradjanin].[Prebivaliste] AS [Prebivaliste], 
+    [vwGradjanin].[KodDrzave] AS [KodDrzave], 
+    [vwGradjanin].[MaloletnoLiceID] AS [MaloletnoLiceID], 
+    [vwGradjanin].[VaziDo] AS [VaziDo], 
+    [vwGradjanin].[Expr1] AS [Expr1], 
+    [vwGradjanin].[UverenjeODrzavljanstvu] AS [UverenjeODrzavljanstvu], 
+    [vwGradjanin].[IzvodMaticneKnjigeRodjenih] AS [IzvodMaticneKnjigeRodjenih], 
+    [vwGradjanin].[UplaceneNaknade] AS [UplaceneNaknade], 
+    [vwGradjanin].[SaglasnostRoditelja] AS [SaglasnostRoditelja], 
+    [vwGradjanin].[Fotografija] AS [Fotografija], 
+    [vwGradjanin].[RokVazenja] AS [RokVazenja]
+    FROM [dbo].[vwGradjanin] AS [vwGradjanin]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwInformacijeOPasosu" EntityType="Self.vwInformacijeOPasosu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwInformacijeOPasosu].[InformacijeOPasosuID] AS [InformacijeOPasosuID], 
+    [vwInformacijeOPasosu].[Email] AS [Email], 
+    [vwInformacijeOPasosu].[Telefon] AS [Telefon], 
+    [vwInformacijeOPasosu].[IzdavanjePasosaID] AS [IzdavanjePasosaID], 
+    [vwInformacijeOPasosu].[ProduzetakPasosaID] AS [ProduzetakPasosaID], 
+    [vwInformacijeOPasosu].[LicnaKarta] AS [LicnaKarta], 
+    [vwInformacijeOPasosu].[IzvodMaticneKnjigeRodjenih] AS [IzvodMaticneKnjigeRodjenih], 
+    [vwInformacijeOPasosu].[StariPasos] AS [StariPasos], 
+    [vwInformacijeOPasosu].[TroskoviUplate] AS [TroskoviUplate]
+    FROM [dbo].[vwInformacijeOPasosu] AS [vwInformacijeOPasosu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwIzdavanjePasosa" EntityType="Self.vwIzdavanjePasosa" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwIzdavanjePasosa].[IzdavanjePasosaID] AS [IzdavanjePasosaID], 
+    [vwIzdavanjePasosa].[LicnaKarta] AS [LicnaKarta], 
+    [vwIzdavanjePasosa].[Fotografija] AS [Fotografija], 
+    [vwIzdavanjePasosa].[IzvodMaticneKnjigeRodjenih] AS [IzvodMaticneKnjigeRodjenih], 
+    [vwIzdavanjePasosa].[UverenjeODrzavljanstvu] AS [UverenjeODrzavljanstvu], 
+    [vwIzdavanjePasosa].[UplataZaPasos] AS [UplataZaPasos]
+    FROM [dbo].[vwIzdavanjePasosa] AS [vwIzdavanjePasosa]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwIzgubljenPasos" EntityType="Self.vwIzgubljenPasos" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwIzgubljenPasos].[IzgubljenPasosID] AS [IzgubljenPasosID], 
+    [vwIzgubljenPasos].[PrijavaNestanka] AS [PrijavaNestanka], 
+    [vwIzgubljenPasos].[NevazecaIsprava] AS [NevazecaIsprava], 
+    [vwIzgubljenPasos].[VadiNoviPasos] AS [VadiNoviPasos]
+    FROM [dbo].[vwIzgubljenPasos] AS [vwIzgubljenPasos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwMaloletnoLice" EntityType="Self.vwMaloletnoLice" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwMaloletnoLice].[MaloletnoLiceID] AS [MaloletnoLiceID], 
+    [vwMaloletnoLice].[UverenjeODrzavljanstvu] AS [UverenjeODrzavljanstvu], 
+    [vwMaloletnoLice].[IzvodMaticneKnjigeRodjenih] AS [IzvodMaticneKnjigeRodjenih], 
+    [vwMaloletnoLice].[UplaceneNaknade] AS [UplaceneNaknade], 
+    [vwMaloletnoLice].[SaglasnostRoditelja] AS [SaglasnostRoditelja], 
+    [vwMaloletnoLice].[Fotografija] AS [Fotografija], 
+    [vwMaloletnoLice].[RokVazenja] AS [RokVazenja]
+    FROM [dbo].[vwMaloletnoLice] AS [vwMaloletnoLice]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwPasos" EntityType="Self.vwPasos" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwPasos].[PasosID] AS [PasosID], 
+    [vwPasos].[IzdajePU] AS [IzdajePU], 
+    [vwPasos].[Drzava] AS [Drzava], 
+    [vwPasos].[Telefon] AS [Telefon], 
+    [vwPasos].[InformacijeOPasosuID] AS [InformacijeOPasosuID], 
+    [vwPasos].[UplataID] AS [UplataID], 
+    [vwPasos].[GradjaninID] AS [GradjaninID], 
+    [vwPasos].[MaloletnoLiceID] AS [MaloletnoLiceID], 
+    [vwPasos].[IzgubljenPasosID] AS [IzgubljenPasosID], 
+    [vwPasos].[Expr1] AS [Expr1], 
+    [vwPasos].[Tip] AS [Tip], 
+    [vwPasos].[Ime] AS [Ime], 
+    [vwPasos].[Prezime] AS [Prezime], 
+    [vwPasos].[JMBG] AS [JMBG], 
+    [vwPasos].[Pol] AS [Pol], 
+    [vwPasos].[DatumIzdavanja] AS [DatumIzdavanja], 
+    [vwPasos].[DatumRodjenja] AS [DatumRodjenja], 
+    [vwPasos].[MestoRodjenja] AS [MestoRodjenja], 
+    [vwPasos].[Prebivaliste] AS [Prebivaliste], 
+    [vwPasos].[KodDrzave] AS [KodDrzave], 
+    [vwPasos].[Expr2] AS [Expr2], 
+    [vwPasos].[VaziDo] AS [VaziDo], 
+    [vwPasos].[UverenjeODrzavljanstvu] AS [UverenjeODrzavljanstvu], 
+    [vwPasos].[IzvodMaticneKnjigeRodjenih] AS [IzvodMaticneKnjigeRodjenih], 
+    [vwPasos].[UplaceneNaknade] AS [UplaceneNaknade], 
+    [vwPasos].[SaglasnostRoditelja] AS [SaglasnostRoditelja], 
+    [vwPasos].[Fotografija] AS [Fotografija], 
+    [vwPasos].[RokVazenja] AS [RokVazenja], 
+    [vwPasos].[Expr4] AS [Expr4], 
+    [vwPasos].[ObrzacPutneIsprave] AS [ObrzacPutneIsprave], 
+    [vwPasos].[AdministrativnaTaksa] AS [AdministrativnaTaksa], 
+    [vwPasos].[Expr5] AS [Expr5], 
+    [vwPasos].[PrijavaNestanka] AS [PrijavaNestanka], 
+    [vwPasos].[NevazecaIsprava] AS [NevazecaIsprava], 
+    [vwPasos].[VadiNoviPasos] AS [VadiNoviPasos], 
+    [vwPasos].[Email] AS [Email], 
+    [vwPasos].[IzdavanjePasosaID] AS [IzdavanjePasosaID], 
+    [vwPasos].[ProduzetakPasosaID] AS [ProduzetakPasosaID], 
+    [vwPasos].[LicnaKarta] AS [LicnaKarta], 
+    [vwPasos].[Expr6] AS [Expr6], 
+    [vwPasos].[Expr7] AS [Expr7], 
+    [vwPasos].[UplataZaPasos] AS [UplataZaPasos], 
+    [vwPasos].[StariPasos] AS [StariPasos], 
+    [vwPasos].[TroskoviUplate] AS [TroskoviUplate]
+    FROM [dbo].[vwPasos] AS [vwPasos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwProduzetakPasosa" EntityType="Self.vwProduzetakPasosa" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwProduzetakPasosa].[ProduzetekPasosaID] AS [ProduzetekPasosaID], 
+    [vwProduzetakPasosa].[LicnaKarta] AS [LicnaKarta], 
+    [vwProduzetakPasosa].[StariPasos] AS [StariPasos], 
+    [vwProduzetakPasosa].[TroskoviUplate] AS [TroskoviUplate]
+    FROM [dbo].[vwProduzetakPasosa] AS [vwProduzetakPasosa]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwUplata" EntityType="Self.vwUplata" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwUplata].[UplataID] AS [UplataID], 
+    [vwUplata].[ObrzacPutneIsprave] AS [ObrzacPutneIsprave], 
+    [vwUplata].[AdministrativnaTaksa] AS [AdministrativnaTaksa]
+    FROM [dbo].[vwUplata] AS [vwUplata]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Gradjanin_MaloletnoLice" Association="Self.FK_Gradjanin_MaloletnoLice">
+            <End Role="MaloletnoLice" EntitySet="MaloletnoLice" />
+            <End Role="Gradjanin" EntitySet="Gradjanin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InformacijeOPasosu_IzdavanjePasosa" Association="Self.FK_InformacijeOPasosu_IzdavanjePasosa">
+            <End Role="IzdavanjePasosa" EntitySet="IzdavanjePasosa" />
+            <End Role="InformacijeOPasosu" EntitySet="InformacijeOPasosu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InformacijeOPasosu_ProduzetakPasosa" Association="Self.FK_InformacijeOPasosu_ProduzetakPasosa">
+            <End Role="ProduzetakPasosa" EntitySet="ProduzetakPasosa" />
+            <End Role="InformacijeOPasosu" EntitySet="InformacijeOPasosu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pasos_Gradjanin" Association="Self.FK_Pasos_Gradjanin">
+            <End Role="Gradjanin" EntitySet="Gradjanin" />
+            <End Role="Pasos" EntitySet="Pasos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pasos_InformacijeOPasosu" Association="Self.FK_Pasos_InformacijeOPasosu">
+            <End Role="InformacijeOPasosu" EntitySet="InformacijeOPasosu" />
+            <End Role="Pasos" EntitySet="Pasos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pasos_IzgubljenPasos" Association="Self.FK_Pasos_IzgubljenPasos">
+            <End Role="IzgubljenPasos" EntitySet="IzgubljenPasos" />
+            <End Role="Pasos" EntitySet="Pasos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pasos_MaloletnoLice" Association="Self.FK_Pasos_MaloletnoLice">
+            <End Role="MaloletnoLice" EntitySet="MaloletnoLice" />
+            <End Role="Pasos" EntitySet="Pasos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pasos_Uplata" Association="Self.FK_Pasos_Uplata">
+            <End Role="Uplata" EntitySet="Uplata" />
+            <End Role="Pasos" EntitySet="Pasos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LicnaDokumentaPasosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Gradjanin">
+          <Key>
+            <PropertyRef Name="GradjaninID" />
+          </Key>
+          <Property Name="GradjaninID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JMBG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DatumIzdavanja" Type="DateTime" Precision="0" />
+          <Property Name="DatumRodjenja" Type="DateTime" Precision="0" />
+          <Property Name="MestoRodjenja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prebivaliste" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KodDrzave" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaloletnoLiceID" Type="Int32" Nullable="false" />
+          <Property Name="VaziDo" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="MaloletnoLouse" Relationship="Self.FK_Gradjanin_MaloletnoLice" FromRole="Gradjanin" ToRole="MaloletnoLice" />
+          <NavigationProperty Name="Pasos" Relationship="Self.FK_Pasos_Gradjanin" FromRole="Gradjanin" ToRole="Pasos" />
+        </EntityType>
+        <EntityType Name="InformacijeOPasosu">
+          <Key>
+            <PropertyRef Name="InformacijeOPasosuID" />
+          </Key>
+          <Property Name="InformacijeOPasosuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="Int32" Nullable="false" />
+          <Property Name="IzdavanjePasosaID" Type="Int32" Nullable="false" />
+          <Property Name="ProduzetakPasosaID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="IzdavanjePasosa" Relationship="Self.FK_InformacijeOPasosu_IzdavanjePasosa" FromRole="InformacijeOPasosu" ToRole="IzdavanjePasosa" />
+          <NavigationProperty Name="ProduzetakPasosa" Relationship="Self.FK_InformacijeOPasosu_ProduzetakPasosa" FromRole="InformacijeOPasosu" ToRole="ProduzetakPasosa" />
+          <NavigationProperty Name="Pasos" Relationship="Self.FK_Pasos_InformacijeOPasosu" FromRole="InformacijeOPasosu" ToRole="Pasos" />
+        </EntityType>
+        <EntityType Name="IzdavanjePasosa">
+          <Key>
+            <PropertyRef Name="IzdavanjePasosaID" />
+          </Key>
+          <Property Name="IzdavanjePasosaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LicnaKarta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fotografija" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IzvodMaticneKnjigeRodjenih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UverenjeODrzavljanstvu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UplataZaPasos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="InformacijeOPasosus" Relationship="Self.FK_InformacijeOPasosu_IzdavanjePasosa" FromRole="IzdavanjePasosa" ToRole="InformacijeOPasosu" />
+        </EntityType>
+        <EntityType Name="IzgubljenPaso">
+          <Key>
+            <PropertyRef Name="IzgubljenPasosID" />
+          </Key>
+          <Property Name="IzgubljenPasosID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrijavaNestanka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NevazecaIsprava" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VadiNoviPasos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Pasos" Relationship="Self.FK_Pasos_IzgubljenPasos" FromRole="IzgubljenPasos" ToRole="Pasos" />
+        </EntityType>
+        <EntityType Name="MaloletnoLouse">
+          <Key>
+            <PropertyRef Name="MaloletnoLiceID" />
+          </Key>
+          <Property Name="MaloletnoLiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UverenjeODrzavljanstvu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IzvodMaticneKnjigeRodjenih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UplaceneNaknade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SaglasnostRoditelja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fotografija" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RokVazenja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Gradjanins" Relationship="Self.FK_Gradjanin_MaloletnoLice" FromRole="MaloletnoLice" ToRole="Gradjanin" />
+          <NavigationProperty Name="Pasos" Relationship="Self.FK_Pasos_MaloletnoLice" FromRole="MaloletnoLice" ToRole="Pasos" />
+        </EntityType>
+        <EntityType Name="Paso">
+          <Key>
+            <PropertyRef Name="PasosID" />
+          </Key>
+          <Property Name="PasosID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IzdajePU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Drzava" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="Int32" Nullable="false" />
+          <Property Name="InformacijeOPasosuID" Type="Int32" Nullable="false" />
+          <Property Name="UplataID" Type="Int32" Nullable="false" />
+          <Property Name="GradjaninID" Type="Int32" Nullable="false" />
+          <Property Name="MaloletnoLiceID" Type="Int32" Nullable="false" />
+          <Property Name="IzgubljenPasosID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Gradjanin" Relationship="Self.FK_Pasos_Gradjanin" FromRole="Pasos" ToRole="Gradjanin" />
+          <NavigationProperty Name="InformacijeOPasosu" Relationship="Self.FK_Pasos_InformacijeOPasosu" FromRole="Pasos" ToRole="InformacijeOPasosu" />
+          <NavigationProperty Name="IzgubljenPaso" Relationship="Self.FK_Pasos_IzgubljenPasos" FromRole="Pasos" ToRole="IzgubljenPasos" />
+          <NavigationProperty Name="MaloletnoLouse" Relationship="Self.FK_Pasos_MaloletnoLice" FromRole="Pasos" ToRole="MaloletnoLice" />
+          <NavigationProperty Name="Uplata" Relationship="Self.FK_Pasos_Uplata" FromRole="Pasos" ToRole="Uplata" />
+        </EntityType>
+        <EntityType Name="ProduzetakPasosa">
+          <Key>
+            <PropertyRef Name="ProduzetekPasosaID" />
+          </Key>
+          <Property Name="ProduzetekPasosaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LicnaKarta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StariPasos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TroskoviUplate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="InformacijeOPasosus" Relationship="Self.FK_InformacijeOPasosu_ProduzetakPasosa" FromRole="ProduzetakPasosa" ToRole="InformacijeOPasosu" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Uplata">
+          <Key>
+            <PropertyRef Name="UplataID" />
+          </Key>
+          <Property Name="UplataID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ObrzacPutneIsprave" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="AdministrativnaTaksa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Pasos" Relationship="Self.FK_Pasos_Uplata" FromRole="Uplata" ToRole="Pasos" />
+        </EntityType>
+        <EntityType Name="vwGradjanin">
+          <Key>
+            <PropertyRef Name="GradjaninID" />
+            <PropertyRef Name="MaloletnoLiceID" />
+            <PropertyRef Name="Expr1" />
+          </Key>
+          <Property Name="GradjaninID" Type="Int32" Nullable="false" />
+          <Property Name="Tip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JMBG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DatumIzdavanja" Type="DateTime" Precision="0" />
+          <Property Name="DatumRodjenja" Type="DateTime" Precision="0" />
+          <Property Name="MestoRodjenja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prebivaliste" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KodDrzave" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaloletnoLiceID" Type="Int32" Nullable="false" />
+          <Property Name="VaziDo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Expr1" Type="Int32" Nullable="false" />
+          <Property Name="UverenjeODrzavljanstvu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IzvodMaticneKnjigeRodjenih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UplaceneNaknade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SaglasnostRoditelja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fotografija" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RokVazenja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwInformacijeOPasosu">
+          <Key>
+            <PropertyRef Name="InformacijeOPasosuID" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="IzdavanjePasosaID" />
+            <PropertyRef Name="ProduzetakPasosaID" />
+          </Key>
+          <Property Name="InformacijeOPasosuID" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="Int32" Nullable="false" />
+          <Property Name="IzdavanjePasosaID" Type="Int32" Nullable="false" />
+          <Property Name="ProduzetakPasosaID" Type="Int32" Nullable="false" />
+          <Property Name="LicnaKarta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IzvodMaticneKnjigeRodjenih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StariPasos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TroskoviUplate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwIzdavanjePasosa">
+          <Key>
+            <PropertyRef Name="IzdavanjePasosaID" />
+          </Key>
+          <Property Name="IzdavanjePasosaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LicnaKarta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fotografija" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IzvodMaticneKnjigeRodjenih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UverenjeODrzavljanstvu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UplataZaPasos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwIzgubljenPaso">
+          <Key>
+            <PropertyRef Name="IzgubljenPasosID" />
+          </Key>
+          <Property Name="IzgubljenPasosID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrijavaNestanka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NevazecaIsprava" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VadiNoviPasos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwMaloletnoLouse">
+          <Key>
+            <PropertyRef Name="MaloletnoLiceID" />
+          </Key>
+          <Property Name="MaloletnoLiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UverenjeODrzavljanstvu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IzvodMaticneKnjigeRodjenih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UplaceneNaknade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SaglasnostRoditelja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fotografija" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RokVazenja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwPaso">
+          <Key>
+            <PropertyRef Name="PasosID" />
+            <PropertyRef Name="Telefon" />
+            <PropertyRef Name="InformacijeOPasosuID" />
+            <PropertyRef Name="UplataID" />
+            <PropertyRef Name="GradjaninID" />
+            <PropertyRef Name="MaloletnoLiceID" />
+            <PropertyRef Name="IzgubljenPasosID" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="Expr4" />
+            <PropertyRef Name="Expr5" />
+            <PropertyRef Name="IzdavanjePasosaID" />
+            <PropertyRef Name="ProduzetakPasosaID" />
+          </Key>
+          <Property Name="PasosID" Type="Int32" Nullable="false" />
+          <Property Name="IzdajePU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Drzava" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="Int32" Nullable="false" />
+          <Property Name="InformacijeOPasosuID" Type="Int32" Nullable="false" />
+          <Property Name="UplataID" Type="Int32" Nullable="false" />
+          <Property Name="GradjaninID" Type="Int32" Nullable="false" />
+          <Property Name="MaloletnoLiceID" Type="Int32" Nullable="false" />
+          <Property Name="IzgubljenPasosID" Type="Int32" Nullable="false" />
+          <Property Name="Expr1" Type="Int32" Nullable="false" />
+          <Property Name="Tip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JMBG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DatumIzdavanja" Type="DateTime" Precision="0" />
+          <Property Name="DatumRodjenja" Type="DateTime" Precision="0" />
+          <Property Name="MestoRodjenja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prebivaliste" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KodDrzave" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Expr2" Type="Int32" Nullable="false" />
+          <Property Name="VaziDo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UverenjeODrzavljanstvu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IzvodMaticneKnjigeRodjenih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UplaceneNaknade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SaglasnostRoditelja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fotografija" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RokVazenja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Expr4" Type="Int32" Nullable="false" />
+          <Property Name="ObrzacPutneIsprave" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="AdministrativnaTaksa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Expr5" Type="Int32" Nullable="false" />
+          <Property Name="PrijavaNestanka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NevazecaIsprava" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VadiNoviPasos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IzdavanjePasosaID" Type="Int32" Nullable="false" />
+          <Property Name="ProduzetakPasosaID" Type="Int32" Nullable="false" />
+          <Property Name="LicnaKarta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Expr6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Expr7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UplataZaPasos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StariPasos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TroskoviUplate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwProduzetakPasosa">
+          <Key>
+            <PropertyRef Name="ProduzetekPasosaID" />
+          </Key>
+          <Property Name="ProduzetekPasosaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LicnaKarta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StariPasos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TroskoviUplate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwUplata">
+          <Key>
+            <PropertyRef Name="UplataID" />
+          </Key>
+          <Property Name="UplataID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ObrzacPutneIsprave" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="AdministrativnaTaksa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Gradjanin_MaloletnoLice">
+          <End Role="MaloletnoLice" Type="Self.MaloletnoLouse" Multiplicity="1" />
+          <End Role="Gradjanin" Type="Self.Gradjanin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaloletnoLice">
+              <PropertyRef Name="MaloletnoLiceID" />
+            </Principal>
+            <Dependent Role="Gradjanin">
+              <PropertyRef Name="MaloletnoLiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pasos_Gradjanin">
+          <End Role="Gradjanin" Type="Self.Gradjanin" Multiplicity="1" />
+          <End Role="Pasos" Type="Self.Paso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gradjanin">
+              <PropertyRef Name="GradjaninID" />
+            </Principal>
+            <Dependent Role="Pasos">
+              <PropertyRef Name="GradjaninID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InformacijeOPasosu_IzdavanjePasosa">
+          <End Role="IzdavanjePasosa" Type="Self.IzdavanjePasosa" Multiplicity="1" />
+          <End Role="InformacijeOPasosu" Type="Self.InformacijeOPasosu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IzdavanjePasosa">
+              <PropertyRef Name="IzdavanjePasosaID" />
+            </Principal>
+            <Dependent Role="InformacijeOPasosu">
+              <PropertyRef Name="IzdavanjePasosaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InformacijeOPasosu_ProduzetakPasosa">
+          <End Role="ProduzetakPasosa" Type="Self.ProduzetakPasosa" Multiplicity="1" />
+          <End Role="InformacijeOPasosu" Type="Self.InformacijeOPasosu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProduzetakPasosa">
+              <PropertyRef Name="ProduzetekPasosaID" />
+            </Principal>
+            <Dependent Role="InformacijeOPasosu">
+              <PropertyRef Name="ProduzetakPasosaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pasos_InformacijeOPasosu">
+          <End Role="InformacijeOPasosu" Type="Self.InformacijeOPasosu" Multiplicity="1" />
+          <End Role="Pasos" Type="Self.Paso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InformacijeOPasosu">
+              <PropertyRef Name="InformacijeOPasosuID" />
+            </Principal>
+            <Dependent Role="Pasos">
+              <PropertyRef Name="InformacijeOPasosuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pasos_IzgubljenPasos">
+          <End Role="IzgubljenPasos" Type="Self.IzgubljenPaso" Multiplicity="1" />
+          <End Role="Pasos" Type="Self.Paso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IzgubljenPasos">
+              <PropertyRef Name="IzgubljenPasosID" />
+            </Principal>
+            <Dependent Role="Pasos">
+              <PropertyRef Name="IzgubljenPasosID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pasos_MaloletnoLice">
+          <End Role="MaloletnoLice" Type="Self.MaloletnoLouse" Multiplicity="1" />
+          <End Role="Pasos" Type="Self.Paso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaloletnoLice">
+              <PropertyRef Name="MaloletnoLiceID" />
+            </Principal>
+            <Dependent Role="Pasos">
+              <PropertyRef Name="MaloletnoLiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pasos_Uplata">
+          <End Role="Uplata" Type="Self.Uplata" Multiplicity="1" />
+          <End Role="Pasos" Type="Self.Paso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uplata">
+              <PropertyRef Name="UplataID" />
+            </Principal>
+            <Dependent Role="Pasos">
+              <PropertyRef Name="UplataID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LicnaDokumentaPasosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Gradjanins" EntityType="Self.Gradjanin" />
+          <EntitySet Name="InformacijeOPasosus" EntityType="Self.InformacijeOPasosu" />
+          <EntitySet Name="IzdavanjePasosas" EntityType="Self.IzdavanjePasosa" />
+          <EntitySet Name="IzgubljenPasos" EntityType="Self.IzgubljenPaso" />
+          <EntitySet Name="MaloletnoLice" EntityType="Self.MaloletnoLouse" />
+          <EntitySet Name="Pasos" EntityType="Self.Paso" />
+          <EntitySet Name="ProduzetakPasosas" EntityType="Self.ProduzetakPasosa" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Uplatas" EntityType="Self.Uplata" />
+          <EntitySet Name="vwGradjanins" EntityType="Self.vwGradjanin" />
+          <EntitySet Name="vwInformacijeOPasosus" EntityType="Self.vwInformacijeOPasosu" />
+          <EntitySet Name="vwIzdavanjePasosas" EntityType="Self.vwIzdavanjePasosa" />
+          <EntitySet Name="vwIzgubljenPasos" EntityType="Self.vwIzgubljenPaso" />
+          <EntitySet Name="vwMaloletnoLice" EntityType="Self.vwMaloletnoLouse" />
+          <EntitySet Name="vwPasos" EntityType="Self.vwPaso" />
+          <EntitySet Name="vwProduzetakPasosas" EntityType="Self.vwProduzetakPasosa" />
+          <EntitySet Name="vwUplatas" EntityType="Self.vwUplata" />
+          <AssociationSet Name="FK_Gradjanin_MaloletnoLice" Association="Self.FK_Gradjanin_MaloletnoLice">
+            <End Role="MaloletnoLice" EntitySet="MaloletnoLice" />
+            <End Role="Gradjanin" EntitySet="Gradjanins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pasos_Gradjanin" Association="Self.FK_Pasos_Gradjanin">
+            <End Role="Gradjanin" EntitySet="Gradjanins" />
+            <End Role="Pasos" EntitySet="Pasos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InformacijeOPasosu_IzdavanjePasosa" Association="Self.FK_InformacijeOPasosu_IzdavanjePasosa">
+            <End Role="IzdavanjePasosa" EntitySet="IzdavanjePasosas" />
+            <End Role="InformacijeOPasosu" EntitySet="InformacijeOPasosus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InformacijeOPasosu_ProduzetakPasosa" Association="Self.FK_InformacijeOPasosu_ProduzetakPasosa">
+            <End Role="ProduzetakPasosa" EntitySet="ProduzetakPasosas" />
+            <End Role="InformacijeOPasosu" EntitySet="InformacijeOPasosus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pasos_InformacijeOPasosu" Association="Self.FK_Pasos_InformacijeOPasosu">
+            <End Role="InformacijeOPasosu" EntitySet="InformacijeOPasosus" />
+            <End Role="Pasos" EntitySet="Pasos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pasos_IzgubljenPasos" Association="Self.FK_Pasos_IzgubljenPasos">
+            <End Role="IzgubljenPasos" EntitySet="IzgubljenPasos" />
+            <End Role="Pasos" EntitySet="Pasos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pasos_MaloletnoLice" Association="Self.FK_Pasos_MaloletnoLice">
+            <End Role="MaloletnoLice" EntitySet="MaloletnoLice" />
+            <End Role="Pasos" EntitySet="Pasos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pasos_Uplata" Association="Self.FK_Pasos_Uplata">
+            <End Role="Uplata" EntitySet="Uplatas" />
+            <End Role="Pasos" EntitySet="Pasos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LicnaDokumentaPasosModelStoreContainer" CdmEntityContainer="LicnaDokumentaPasosEntities">
+          <EntitySetMapping Name="Gradjanins">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.Gradjanin">
+              <MappingFragment StoreEntitySet="Gradjanin">
+                <ScalarProperty Name="GradjaninID" ColumnName="GradjaninID" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="JMBG" ColumnName="JMBG" />
+                <ScalarProperty Name="Pol" ColumnName="Pol" />
+                <ScalarProperty Name="DatumIzdavanja" ColumnName="DatumIzdavanja" />
+                <ScalarProperty Name="DatumRodjenja" ColumnName="DatumRodjenja" />
+                <ScalarProperty Name="MestoRodjenja" ColumnName="MestoRodjenja" />
+                <ScalarProperty Name="Prebivaliste" ColumnName="Prebivaliste" />
+                <ScalarProperty Name="KodDrzave" ColumnName="KodDrzave" />
+                <ScalarProperty Name="MaloletnoLiceID" ColumnName="MaloletnoLiceID" />
+                <ScalarProperty Name="VaziDo" ColumnName="VaziDo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InformacijeOPasosus">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.InformacijeOPasosu">
+              <MappingFragment StoreEntitySet="InformacijeOPasosu">
+                <ScalarProperty Name="InformacijeOPasosuID" ColumnName="InformacijeOPasosuID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="IzdavanjePasosaID" ColumnName="IzdavanjePasosaID" />
+                <ScalarProperty Name="ProduzetakPasosaID" ColumnName="ProduzetakPasosaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IzdavanjePasosas">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.IzdavanjePasosa">
+              <MappingFragment StoreEntitySet="IzdavanjePasosa">
+                <ScalarProperty Name="IzdavanjePasosaID" ColumnName="IzdavanjePasosaID" />
+                <ScalarProperty Name="LicnaKarta" ColumnName="LicnaKarta" />
+                <ScalarProperty Name="Fotografija" ColumnName="Fotografija" />
+                <ScalarProperty Name="IzvodMaticneKnjigeRodjenih" ColumnName="IzvodMaticneKnjigeRodjenih" />
+                <ScalarProperty Name="UverenjeODrzavljanstvu" ColumnName="UverenjeODrzavljanstvu" />
+                <ScalarProperty Name="UplataZaPasos" ColumnName="UplataZaPasos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IzgubljenPasos">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.IzgubljenPaso">
+              <MappingFragment StoreEntitySet="IzgubljenPasos">
+                <ScalarProperty Name="IzgubljenPasosID" ColumnName="IzgubljenPasosID" />
+                <ScalarProperty Name="PrijavaNestanka" ColumnName="PrijavaNestanka" />
+                <ScalarProperty Name="NevazecaIsprava" ColumnName="NevazecaIsprava" />
+                <ScalarProperty Name="VadiNoviPasos" ColumnName="VadiNoviPasos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaloletnoLice">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.MaloletnoLouse">
+              <MappingFragment StoreEntitySet="MaloletnoLice">
+                <ScalarProperty Name="MaloletnoLiceID" ColumnName="MaloletnoLiceID" />
+                <ScalarProperty Name="UverenjeODrzavljanstvu" ColumnName="UverenjeODrzavljanstvu" />
+                <ScalarProperty Name="IzvodMaticneKnjigeRodjenih" ColumnName="IzvodMaticneKnjigeRodjenih" />
+                <ScalarProperty Name="UplaceneNaknade" ColumnName="UplaceneNaknade" />
+                <ScalarProperty Name="SaglasnostRoditelja" ColumnName="SaglasnostRoditelja" />
+                <ScalarProperty Name="Fotografija" ColumnName="Fotografija" />
+                <ScalarProperty Name="RokVazenja" ColumnName="RokVazenja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pasos">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.Paso">
+              <MappingFragment StoreEntitySet="Pasos">
+                <ScalarProperty Name="PasosID" ColumnName="PasosID" />
+                <ScalarProperty Name="IzdajePU" ColumnName="IzdajePU" />
+                <ScalarProperty Name="Drzava" ColumnName="Drzava" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="InformacijeOPasosuID" ColumnName="InformacijeOPasosuID" />
+                <ScalarProperty Name="UplataID" ColumnName="UplataID" />
+                <ScalarProperty Name="GradjaninID" ColumnName="GradjaninID" />
+                <ScalarProperty Name="MaloletnoLiceID" ColumnName="MaloletnoLiceID" />
+                <ScalarProperty Name="IzgubljenPasosID" ColumnName="IzgubljenPasosID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProduzetakPasosas">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.ProduzetakPasosa">
+              <MappingFragment StoreEntitySet="ProduzetakPasosa">
+                <ScalarProperty Name="ProduzetekPasosaID" ColumnName="ProduzetekPasosaID" />
+                <ScalarProperty Name="LicnaKarta" ColumnName="LicnaKarta" />
+                <ScalarProperty Name="StariPasos" ColumnName="StariPasos" />
+                <ScalarProperty Name="TroskoviUplate" ColumnName="TroskoviUplate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uplatas">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.Uplata">
+              <MappingFragment StoreEntitySet="Uplata">
+                <ScalarProperty Name="UplataID" ColumnName="UplataID" />
+                <ScalarProperty Name="ObrzacPutneIsprave" ColumnName="ObrzacPutneIsprave" />
+                <ScalarProperty Name="AdministrativnaTaksa" ColumnName="AdministrativnaTaksa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwGradjanins">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.vwGradjanin">
+              <MappingFragment StoreEntitySet="vwGradjanin">
+                <ScalarProperty Name="GradjaninID" ColumnName="GradjaninID" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="JMBG" ColumnName="JMBG" />
+                <ScalarProperty Name="Pol" ColumnName="Pol" />
+                <ScalarProperty Name="DatumIzdavanja" ColumnName="DatumIzdavanja" />
+                <ScalarProperty Name="DatumRodjenja" ColumnName="DatumRodjenja" />
+                <ScalarProperty Name="MestoRodjenja" ColumnName="MestoRodjenja" />
+                <ScalarProperty Name="Prebivaliste" ColumnName="Prebivaliste" />
+                <ScalarProperty Name="KodDrzave" ColumnName="KodDrzave" />
+                <ScalarProperty Name="MaloletnoLiceID" ColumnName="MaloletnoLiceID" />
+                <ScalarProperty Name="VaziDo" ColumnName="VaziDo" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="UverenjeODrzavljanstvu" ColumnName="UverenjeODrzavljanstvu" />
+                <ScalarProperty Name="IzvodMaticneKnjigeRodjenih" ColumnName="IzvodMaticneKnjigeRodjenih" />
+                <ScalarProperty Name="UplaceneNaknade" ColumnName="UplaceneNaknade" />
+                <ScalarProperty Name="SaglasnostRoditelja" ColumnName="SaglasnostRoditelja" />
+                <ScalarProperty Name="Fotografija" ColumnName="Fotografija" />
+                <ScalarProperty Name="RokVazenja" ColumnName="RokVazenja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwInformacijeOPasosus">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.vwInformacijeOPasosu">
+              <MappingFragment StoreEntitySet="vwInformacijeOPasosu">
+                <ScalarProperty Name="InformacijeOPasosuID" ColumnName="InformacijeOPasosuID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="IzdavanjePasosaID" ColumnName="IzdavanjePasosaID" />
+                <ScalarProperty Name="ProduzetakPasosaID" ColumnName="ProduzetakPasosaID" />
+                <ScalarProperty Name="LicnaKarta" ColumnName="LicnaKarta" />
+                <ScalarProperty Name="IzvodMaticneKnjigeRodjenih" ColumnName="IzvodMaticneKnjigeRodjenih" />
+                <ScalarProperty Name="StariPasos" ColumnName="StariPasos" />
+                <ScalarProperty Name="TroskoviUplate" ColumnName="TroskoviUplate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwIzdavanjePasosas">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.vwIzdavanjePasosa">
+              <MappingFragment StoreEntitySet="vwIzdavanjePasosa">
+                <ScalarProperty Name="IzdavanjePasosaID" ColumnName="IzdavanjePasosaID" />
+                <ScalarProperty Name="LicnaKarta" ColumnName="LicnaKarta" />
+                <ScalarProperty Name="Fotografija" ColumnName="Fotografija" />
+                <ScalarProperty Name="IzvodMaticneKnjigeRodjenih" ColumnName="IzvodMaticneKnjigeRodjenih" />
+                <ScalarProperty Name="UverenjeODrzavljanstvu" ColumnName="UverenjeODrzavljanstvu" />
+                <ScalarProperty Name="UplataZaPasos" ColumnName="UplataZaPasos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwIzgubljenPasos">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.vwIzgubljenPaso">
+              <MappingFragment StoreEntitySet="vwIzgubljenPasos">
+                <ScalarProperty Name="IzgubljenPasosID" ColumnName="IzgubljenPasosID" />
+                <ScalarProperty Name="PrijavaNestanka" ColumnName="PrijavaNestanka" />
+                <ScalarProperty Name="NevazecaIsprava" ColumnName="NevazecaIsprava" />
+                <ScalarProperty Name="VadiNoviPasos" ColumnName="VadiNoviPasos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwMaloletnoLice">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.vwMaloletnoLouse">
+              <MappingFragment StoreEntitySet="vwMaloletnoLice">
+                <ScalarProperty Name="MaloletnoLiceID" ColumnName="MaloletnoLiceID" />
+                <ScalarProperty Name="UverenjeODrzavljanstvu" ColumnName="UverenjeODrzavljanstvu" />
+                <ScalarProperty Name="IzvodMaticneKnjigeRodjenih" ColumnName="IzvodMaticneKnjigeRodjenih" />
+                <ScalarProperty Name="UplaceneNaknade" ColumnName="UplaceneNaknade" />
+                <ScalarProperty Name="SaglasnostRoditelja" ColumnName="SaglasnostRoditelja" />
+                <ScalarProperty Name="Fotografija" ColumnName="Fotografija" />
+                <ScalarProperty Name="RokVazenja" ColumnName="RokVazenja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwPasos">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.vwPaso">
+              <MappingFragment StoreEntitySet="vwPasos">
+                <ScalarProperty Name="PasosID" ColumnName="PasosID" />
+                <ScalarProperty Name="IzdajePU" ColumnName="IzdajePU" />
+                <ScalarProperty Name="Drzava" ColumnName="Drzava" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="InformacijeOPasosuID" ColumnName="InformacijeOPasosuID" />
+                <ScalarProperty Name="UplataID" ColumnName="UplataID" />
+                <ScalarProperty Name="GradjaninID" ColumnName="GradjaninID" />
+                <ScalarProperty Name="MaloletnoLiceID" ColumnName="MaloletnoLiceID" />
+                <ScalarProperty Name="IzgubljenPasosID" ColumnName="IzgubljenPasosID" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="JMBG" ColumnName="JMBG" />
+                <ScalarProperty Name="Pol" ColumnName="Pol" />
+                <ScalarProperty Name="DatumIzdavanja" ColumnName="DatumIzdavanja" />
+                <ScalarProperty Name="DatumRodjenja" ColumnName="DatumRodjenja" />
+                <ScalarProperty Name="MestoRodjenja" ColumnName="MestoRodjenja" />
+                <ScalarProperty Name="Prebivaliste" ColumnName="Prebivaliste" />
+                <ScalarProperty Name="KodDrzave" ColumnName="KodDrzave" />
+                <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+                <ScalarProperty Name="VaziDo" ColumnName="VaziDo" />
+                <ScalarProperty Name="UverenjeODrzavljanstvu" ColumnName="UverenjeODrzavljanstvu" />
+                <ScalarProperty Name="IzvodMaticneKnjigeRodjenih" ColumnName="IzvodMaticneKnjigeRodjenih" />
+                <ScalarProperty Name="UplaceneNaknade" ColumnName="UplaceneNaknade" />
+                <ScalarProperty Name="SaglasnostRoditelja" ColumnName="SaglasnostRoditelja" />
+                <ScalarProperty Name="Fotografija" ColumnName="Fotografija" />
+                <ScalarProperty Name="RokVazenja" ColumnName="RokVazenja" />
+                <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+                <ScalarProperty Name="ObrzacPutneIsprave" ColumnName="ObrzacPutneIsprave" />
+                <ScalarProperty Name="AdministrativnaTaksa" ColumnName="AdministrativnaTaksa" />
+                <ScalarProperty Name="Expr5" ColumnName="Expr5" />
+                <ScalarProperty Name="PrijavaNestanka" ColumnName="PrijavaNestanka" />
+                <ScalarProperty Name="NevazecaIsprava" ColumnName="NevazecaIsprava" />
+                <ScalarProperty Name="VadiNoviPasos" ColumnName="VadiNoviPasos" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="IzdavanjePasosaID" ColumnName="IzdavanjePasosaID" />
+                <ScalarProperty Name="ProduzetakPasosaID" ColumnName="ProduzetakPasosaID" />
+                <ScalarProperty Name="LicnaKarta" ColumnName="LicnaKarta" />
+                <ScalarProperty Name="Expr6" ColumnName="Expr6" />
+                <ScalarProperty Name="Expr7" ColumnName="Expr7" />
+                <ScalarProperty Name="UplataZaPasos" ColumnName="UplataZaPasos" />
+                <ScalarProperty Name="StariPasos" ColumnName="StariPasos" />
+                <ScalarProperty Name="TroskoviUplate" ColumnName="TroskoviUplate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwProduzetakPasosas">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.vwProduzetakPasosa">
+              <MappingFragment StoreEntitySet="vwProduzetakPasosa">
+                <ScalarProperty Name="ProduzetekPasosaID" ColumnName="ProduzetekPasosaID" />
+                <ScalarProperty Name="LicnaKarta" ColumnName="LicnaKarta" />
+                <ScalarProperty Name="StariPasos" ColumnName="StariPasos" />
+                <ScalarProperty Name="TroskoviUplate" ColumnName="TroskoviUplate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwUplatas">
+            <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.vwUplata">
+              <MappingFragment StoreEntitySet="vwUplata">
+                <ScalarProperty Name="UplataID" ColumnName="UplataID" />
+                <ScalarProperty Name="ObrzacPutneIsprave" ColumnName="ObrzacPutneIsprave" />
+                <ScalarProperty Name="AdministrativnaTaksa" ColumnName="AdministrativnaTaksa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

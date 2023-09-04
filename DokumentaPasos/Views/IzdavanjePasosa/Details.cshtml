@@ -1,0 +1,57 @@
+﻿@model DokumentaPasos.Models.IzdavanjePasosa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Informacije o izdavanju pasoša</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LicnaKarta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LicnaKarta)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Fotografija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fotografija)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IzvodMaticneKnjigeRodjenih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IzvodMaticneKnjigeRodjenih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UverenjeODrzavljanstvu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UverenjeODrzavljanstvu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UplataZaPasos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UplataZaPasos)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Izmeni", "Edit", new { id = Model.IzdavanjePasosaID }) |
+    @Html.ActionLink("Lista izdavanje pasoša", "Index")
+</p>

@@ -1,0 +1,65 @@
+﻿@model DokumentaPasos.Models.MaloletnoLouse
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Informacije o maloletnom licu</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UverenjeODrzavljanstvu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UverenjeODrzavljanstvu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IzvodMaticneKnjigeRodjenih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IzvodMaticneKnjigeRodjenih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UplaceneNaknade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UplaceneNaknade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaglasnostRoditelja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaglasnostRoditelja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fotografija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fotografija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RokVazenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RokVazenja)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Izmeni", "Edit", new { id = Model.MaloletnoLiceID }) |
+    @Html.ActionLink("Lista maloletnih lica", "Index")
+</p>

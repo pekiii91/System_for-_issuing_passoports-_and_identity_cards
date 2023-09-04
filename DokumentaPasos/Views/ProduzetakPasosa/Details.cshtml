@@ -1,0 +1,41 @@
+﻿@model DokumentaPasos.Models.ProduzetakPasosa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Informacije o produženom pasošu</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.LicnaKarta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LicnaKarta)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StariPasos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StariPasos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TroskoviUplate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TroskoviUplate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Izmena", "Edit", new { id = Model.ProduzetekPasosaID }) |
+    @Html.ActionLink("Lista produžetka pasoša", "Index")
+</p>

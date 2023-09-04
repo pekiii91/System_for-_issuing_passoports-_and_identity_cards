@@ -1,0 +1,119 @@
+﻿@model DokumentaPasos.Models.Gradjanin
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Brisanje gradjanina</h2>
+
+<h3>Da li ste sigurni?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JMBG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JMBG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumIzdavanja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumIzdavanja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumRodjenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumRodjenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MestoRodjenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MestoRodjenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prebivaliste)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prebivaliste)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KodDrzave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KodDrzave)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VaziDo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VaziDo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaloletnoLouse.UverenjeODrzavljanstvu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaloletnoLouse.UverenjeODrzavljanstvu)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši" class="btn btn-danger" /> |
+            @Html.ActionLink("Lista građana", "Index")
+        </div>
+    }
+</div>

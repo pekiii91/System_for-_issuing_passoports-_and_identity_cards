@@ -1,0 +1,64 @@
+﻿@model DokumentaPasos.Models.IzdavanjePasosa
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Brisanje izdavanje pasoša</h2>
+
+<h3>Da li ste sigurni?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LicnaKarta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LicnaKarta)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Fotografija)
+        </dt>*@
+
+        @*<dd>
+            @Html.DisplayFor(model => model.Fotografija)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IzvodMaticneKnjigeRodjenih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IzvodMaticneKnjigeRodjenih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UverenjeODrzavljanstvu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UverenjeODrzavljanstvu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UplataZaPasos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UplataZaPasos)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši" class="btn btn-danger" /> |
+            @Html.ActionLink("Lista izdavanja pasoša", "Index")
+        </div>
+    }
+</div>

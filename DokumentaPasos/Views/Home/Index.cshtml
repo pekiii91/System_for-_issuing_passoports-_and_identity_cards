@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<head>
+    <style type="text/css">
+        .navigacija {
+            background-color: blue;
+            text-align: center;
+            font-size: 65px;
+            height: 300px;
+        }
+
+        h1 {
+            color: yellow;
+            padding-top: 70px;
+        }
+     
+    </style>
+</head>
+<body>
+    <div class="navigacija">
+        <h1>Lična Dokumenta - Pasoš</h1>
+        <div class="btn-group">
+            <a class="btn btn-info" role="button" onclick="location.href='@Url.Action("Index","Pasos")'">Pasoš</a>
+            <a class="btn btn-info" role="button" onclick="location.href='@Url.Action("Index","Gradjanin")'">Gradjanin</a>
+            <a class="btn btn-info" role="button" onclick="location.href='@Url.Action("Index","MaloletnoLice")'">Maloletno Lice</a>
+            <a class="btn btn-info" role="button" onclick="location.href='@Url.Action("Index","Uplata")'">Uplata</a>
+            <a class="btn btn-info" role="button" onclick="location.href='@Url.Action("Index","InformacijeOPasosu")'">Informacije o pasošu</a>
+            <a class="btn btn-info" role="button" onclick="location.href='@Url.Action("Index","IzdavanjePasosa")'">Izdavanje Pasoš</a>
+            <a class="btn btn-info" role="button" onclick="location.href='@Url.Action("Index","ProduzetakPasosa")'">Produžetak Pasoš</a>
+            <a class="btn btn-info" role="button" onclick="location.href='@Url.Action("Index","IzgubljenPasos")'">Izgubljen Pasoš</a>
+        </div>
+    </div>
+</body>

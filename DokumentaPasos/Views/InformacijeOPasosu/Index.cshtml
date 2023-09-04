@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DokumentaPasos.Models.InformacijeOPasosu>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista o informacijama</h2>
+
+<p>
+    @Html.ActionLink("Kreiranje nove informacije", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </th*@
+        <th>
+            @Html.DisplayNameFor(model => model.IzdavanjePasosa.IzvodMaticneKnjigeRodjenih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProduzetakPasosa.StariPasos)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.IzdavanjePasosa.IzvodMaticneKnjigeRodjenih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProduzetakPasosa.StariPasos)
+            </td>
+            <td>
+                @Html.ActionLink("Izmeni", "Edit", new { id = item.InformacijeOPasosuID }) |
+                @Html.ActionLink("Detalji", "Details", new { id = item.InformacijeOPasosuID }) |
+                @Html.ActionLink("Obriši", "Delete", new { id = item.InformacijeOPasosuID })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>@Html.ActionLink("Pocetna strana", "Index", "Home")</div>

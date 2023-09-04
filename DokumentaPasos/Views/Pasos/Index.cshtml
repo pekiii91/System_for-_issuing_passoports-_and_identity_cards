@@ -1,0 +1,84 @@
+﻿@model IEnumerable<DokumentaPasos.Models.Paso>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista pasoša</h2>
+
+
+<div>
+    <p>
+        @Html.ActionLink("Kreiraj novi pasoš", "Create")
+    </p>
+</div>
+
+
+<br /> 
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IzdajePU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Drzava)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gradjanin.Tip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InformacijeOPasosu.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IzgubljenPaso.PrijavaNestanka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaloletnoLouse.UverenjeODrzavljanstvu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uplata.ObrzacPutneIsprave)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IzdajePU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Drzava)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gradjanin.Tip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InformacijeOPasosu.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IzgubljenPaso.PrijavaNestanka)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaloletnoLouse.UverenjeODrzavljanstvu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Uplata.ObrzacPutneIsprave)
+        </td>
+        <td>
+            @Html.ActionLink("Izmeni", "Edit", new { id = item.PasosID })
+            @Html.ActionLink("Detalji", "Details", new { id = item.PasosID })
+            @Html.ActionLink("Obriši", "Delete", new { id = item.PasosID }) 
+        </td>
+        
+    </tr>
+}
+
+</table>
+<div>@Html.ActionLink("Pocetna strana", "Index", "Home")</div>
