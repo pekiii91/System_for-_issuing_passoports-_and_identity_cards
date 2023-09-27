@@ -6,16 +6,9 @@
 
 <h2>Lista pasoša</h2>
 
-
-<div>
-    <p>
-        @Html.ActionLink("Kreiraj novi pasoš", "Create")
-    </p>
-</div>
-
-
-<br /> 
-<br />
+<p>
+    @Html.ActionLink("Kreiraj novi pasoš", "Create")
+</p>
 <table class="table">
     <tr>
         <th>
@@ -28,7 +21,10 @@
             @Html.DisplayNameFor(model => model.Telefon)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Gradjanin.Tip)
+            @Html.DisplayNameFor(model => model.TipDokumenta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gradjanin.BrojDokumenta)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.InformacijeOPasosu.Email)
@@ -37,7 +33,7 @@
             @Html.DisplayNameFor(model => model.IzgubljenPaso.PrijavaNestanka)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MaloletnoLouse.UverenjeODrzavljanstvu)
+            @Html.DisplayNameFor(model => model.MaloletnoLouse.SaglasnostRoditelja)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Uplata.ObrzacPutneIsprave)
@@ -45,40 +41,46 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.IzdajePU)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Drzava)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Telefon)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gradjanin.Tip)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InformacijeOPasosu.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IzgubljenPaso.PrijavaNestanka)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaloletnoLouse.UverenjeODrzavljanstvu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Uplata.ObrzacPutneIsprave)
-        </td>
-        <td>
-            @Html.ActionLink("Izmeni", "Edit", new { id = item.PasosID })
-            @Html.ActionLink("Detalji", "Details", new { id = item.PasosID })
-            @Html.ActionLink("Obriši", "Delete", new { id = item.PasosID }) 
-        </td>
-        
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IzdajePU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Drzava)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipDokumenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gradjanin.BrojDokumenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InformacijeOPasosu.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IzgubljenPaso.PrijavaNestanka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaloletnoLouse.SaglasnostRoditelja)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uplata.ObrzacPutneIsprave)
+            </td>
+            <td>
+                @Html.ActionLink("Izmeni", "Edit", new { id = item.PasosID }) |
+                @Html.ActionLink("Detalji", "Details", new { id = item.PasosID }) |
+                @Html.ActionLink("Obriši", "Delete", new { id = item.PasosID })
+            </td>
+        </tr>
+    }
 
 </table>
-<div>@Html.ActionLink("Pocetna strana", "Index", "Home")</div>
+<div>@Html.ActionLink("Početna strana", "Index", "Home")</div>
+
+  
+

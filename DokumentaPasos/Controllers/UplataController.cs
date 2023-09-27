@@ -12,7 +12,7 @@ namespace DokumentaPasos.Controllers
 {
     public class UplataController : Controller
     {
-        private readonly LicnaDokumentaPasosEntities db = new LicnaDokumentaPasosEntities();
+        private LicnaDokumentaPasosEntities db = new LicnaDokumentaPasosEntities();
 
         // GET: Uplata
         public ActionResult Index()

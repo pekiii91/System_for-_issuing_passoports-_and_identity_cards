@@ -9,14 +9,12 @@
 <p>
     @Html.ActionLink("Kreiranje novog izdavanja pasoša", "Create")
 </p>
-<table class="table">
+<table id="myIzdavanje" class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.LicnaKarta)
         </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.Fotografija)
-        </th>*@
+       
         <th>
             @Html.DisplayNameFor(model => model.IzvodMaticneKnjigeRodjenih)
         </th>
@@ -35,9 +33,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.LicnaKarta)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.Fotografija)
-            </td>*@
+            
             <td>
                 @Html.DisplayFor(modelItem => item.IzvodMaticneKnjigeRodjenih)
             </td>
@@ -56,4 +52,4 @@
     }
 
 </table>
-<div>@Html.ActionLink("Pocetna strana", "Index", "Home")</div>
+<div>@Html.ActionLink("Početna strana", "Index", "Home")</div>

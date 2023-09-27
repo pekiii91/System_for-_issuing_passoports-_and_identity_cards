@@ -4,6 +4,7 @@
 }
 
 <h2>Brisanje pasoša</h2>
+
 <h3>Da li ste sigurni?</h3>
 <div>
     <hr />
@@ -33,11 +34,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Gradjanin.Tip)
+            @Html.DisplayNameFor(model => model.TipDokumenta)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Gradjanin.Tip)
+            @Html.DisplayFor(model => model.TipDokumenta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gradjanin.BrojDokumenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gradjanin.BrojDokumenta)
         </dd>
 
         <dt>
@@ -57,11 +66,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MaloletnoLouse.UverenjeODrzavljanstvu)
+            @Html.DisplayNameFor(model => model.MaloletnoLouse.SaglasnostRoditelja)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MaloletnoLouse.UverenjeODrzavljanstvu)
+            @Html.DisplayFor(model => model.MaloletnoLouse.SaglasnostRoditelja)
         </dd>
 
         <dt>
@@ -71,6 +80,7 @@
         <dd>
             @Html.DisplayFor(model => model.Uplata.ObrzacPutneIsprave)
         </dd>
+
     </dl>
 
     @using (Html.BeginForm()) {

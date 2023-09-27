@@ -4,20 +4,12 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Brisanje gradjanina</h2>
+<h2>Brisanje građanina</h2>
 
 <h3>Da li ste sigurni?</h3>
 <div>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Tip)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Tip)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Ime)
         </dt>
@@ -99,11 +91,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MaloletnoLouse.UverenjeODrzavljanstvu)
+            @Html.DisplayNameFor(model => model.BrojDokumenta)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MaloletnoLouse.UverenjeODrzavljanstvu)
+            @Html.DisplayFor(model => model.BrojDokumenta)
         </dd>
 
     </dl>

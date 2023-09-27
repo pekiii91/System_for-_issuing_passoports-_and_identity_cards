@@ -10,7 +10,6 @@
             <PropertyRef Name="GradjaninID" />
           </Key>
           <Property Name="GradjaninID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Tip" Type="nvarchar" MaxLength="50" />
           <Property Name="Ime" Type="nvarchar" MaxLength="50" />
           <Property Name="Prezime" Type="nvarchar" MaxLength="50" />
           <Property Name="JMBG" Type="nvarchar" MaxLength="50" />
@@ -20,8 +19,8 @@
           <Property Name="MestoRodjenja" Type="nvarchar" MaxLength="50" />
           <Property Name="Prebivaliste" Type="nvarchar" MaxLength="50" />
           <Property Name="KodDrzave" Type="nvarchar" MaxLength="50" />
-          <Property Name="MaloletnoLiceID" Type="int" Nullable="false" />
           <Property Name="VaziDo" Type="date" />
+          <Property Name="BrojDokumenta" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="InformacijeOPasosu">
           <Key>
@@ -72,12 +71,13 @@
           <Property Name="PasosID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IzdajePU" Type="nvarchar" MaxLength="50" />
           <Property Name="Drzava" Type="nvarchar" MaxLength="50" />
-          <Property Name="Telefon" Type="int" Nullable="false" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="InformacijeOPasosuID" Type="int" Nullable="false" />
           <Property Name="UplataID" Type="int" Nullable="false" />
           <Property Name="GradjaninID" Type="int" Nullable="false" />
           <Property Name="MaloletnoLiceID" Type="int" Nullable="false" />
           <Property Name="IzgubljenPasosID" Type="int" Nullable="false" />
+          <Property Name="TipDokumenta" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="ProduzetakPasosa">
           <Key>
@@ -111,11 +111,8 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwGradjanin' does not have
         <EntityType Name="vwGradjanin">
           <Key>
             <PropertyRef Name="GradjaninID" />
-            <PropertyRef Name="MaloletnoLiceID" />
-            <PropertyRef Name="Expr1" />
           </Key>
-          <Property Name="GradjaninID" Type="int" Nullable="false" />
-          <Property Name="Tip" Type="nvarchar" MaxLength="50" />
+          <Property Name="GradjaninID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ime" Type="nvarchar" MaxLength="50" />
           <Property Name="Prezime" Type="nvarchar" MaxLength="50" />
           <Property Name="JMBG" Type="nvarchar" MaxLength="50" />
@@ -125,15 +122,8 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwGradjanin' does not have
           <Property Name="MestoRodjenja" Type="nvarchar" MaxLength="50" />
           <Property Name="Prebivaliste" Type="nvarchar" MaxLength="50" />
           <Property Name="KodDrzave" Type="nvarchar" MaxLength="50" />
-          <Property Name="MaloletnoLiceID" Type="int" Nullable="false" />
-          <Property Name="VaziDo" Type="nvarchar" MaxLength="50" />
-          <Property Name="Expr1" Type="int" Nullable="false" />
-          <Property Name="UverenjeODrzavljanstvu" Type="nvarchar" MaxLength="50" />
-          <Property Name="IzvodMaticneKnjigeRodjenih" Type="nvarchar" MaxLength="50" />
-          <Property Name="UplaceneNaknade" Type="nvarchar" MaxLength="50" />
-          <Property Name="SaglasnostRoditelja" Type="nvarchar" MaxLength="50" />
-          <Property Name="Fotografija" Type="nvarchar" MaxLength="50" />
-          <Property Name="RokVazenja" Type="nvarchar" MaxLength="50" />
+          <Property Name="VaziDo" Type="date" />
+          <Property Name="BrojDokumenta" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwInformacijeOPasosu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -204,23 +194,24 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwPasos' does not have a p
             <PropertyRef Name="MaloletnoLiceID" />
             <PropertyRef Name="IzgubljenPasosID" />
             <PropertyRef Name="Expr1" />
-            <PropertyRef Name="Expr2" />
-            <PropertyRef Name="Expr4" />
-            <PropertyRef Name="Expr5" />
             <PropertyRef Name="IzdavanjePasosaID" />
             <PropertyRef Name="ProduzetakPasosaID" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="Expr3" />
+            <PropertyRef Name="Expr4" />
+            <PropertyRef Name="Expr5" />
           </Key>
           <Property Name="PasosID" Type="int" Nullable="false" />
           <Property Name="IzdajePU" Type="nvarchar" MaxLength="50" />
           <Property Name="Drzava" Type="nvarchar" MaxLength="50" />
-          <Property Name="Telefon" Type="int" Nullable="false" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="InformacijeOPasosuID" Type="int" Nullable="false" />
           <Property Name="UplataID" Type="int" Nullable="false" />
           <Property Name="GradjaninID" Type="int" Nullable="false" />
           <Property Name="MaloletnoLiceID" Type="int" Nullable="false" />
           <Property Name="IzgubljenPasosID" Type="int" Nullable="false" />
+          <Property Name="TipDokumenta" Type="nvarchar" MaxLength="50" />
           <Property Name="Expr1" Type="int" Nullable="false" />
-          <Property Name="Tip" Type="nvarchar" MaxLength="50" />
           <Property Name="Ime" Type="nvarchar" MaxLength="50" />
           <Property Name="Prezime" Type="nvarchar" MaxLength="50" />
           <Property Name="JMBG" Type="nvarchar" MaxLength="50" />
@@ -230,24 +221,25 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwPasos' does not have a p
           <Property Name="MestoRodjenja" Type="nvarchar" MaxLength="50" />
           <Property Name="Prebivaliste" Type="nvarchar" MaxLength="50" />
           <Property Name="KodDrzave" Type="nvarchar" MaxLength="50" />
+          <Property Name="VaziDo" Type="date" />
+          <Property Name="BrojDokumenta" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="IzdavanjePasosaID" Type="int" Nullable="false" />
+          <Property Name="ProduzetakPasosaID" Type="int" Nullable="false" />
           <Property Name="Expr2" Type="int" Nullable="false" />
-          <Property Name="VaziDo" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrijavaNestanka" Type="nvarchar" MaxLength="50" />
+          <Property Name="NevazecaIsprava" Type="nvarchar" MaxLength="50" />
+          <Property Name="Expr3" Type="int" Nullable="false" />
+          <Property Name="Expr4" Type="int" Nullable="false" />
           <Property Name="UverenjeODrzavljanstvu" Type="nvarchar" MaxLength="50" />
           <Property Name="IzvodMaticneKnjigeRodjenih" Type="nvarchar" MaxLength="50" />
           <Property Name="UplaceneNaknade" Type="nvarchar" MaxLength="50" />
           <Property Name="SaglasnostRoditelja" Type="nvarchar" MaxLength="50" />
           <Property Name="Fotografija" Type="nvarchar" MaxLength="50" />
           <Property Name="RokVazenja" Type="nvarchar" MaxLength="50" />
-          <Property Name="Expr4" Type="int" Nullable="false" />
+          <Property Name="Expr5" Type="int" Nullable="false" />
           <Property Name="ObrzacPutneIsprave" Type="nchar" MaxLength="10" />
           <Property Name="AdministrativnaTaksa" Type="nchar" MaxLength="10" />
-          <Property Name="Expr5" Type="int" Nullable="false" />
-          <Property Name="PrijavaNestanka" Type="nvarchar" MaxLength="50" />
-          <Property Name="NevazecaIsprava" Type="nvarchar" MaxLength="50" />
-          <Property Name="VadiNoviPasos" Type="nvarchar" MaxLength="50" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" />
-          <Property Name="IzdavanjePasosaID" Type="int" Nullable="false" />
-          <Property Name="ProduzetakPasosaID" Type="int" Nullable="false" />
           <Property Name="LicnaKarta" Type="nvarchar" MaxLength="50" />
           <Property Name="Expr6" Type="nvarchar" MaxLength="50" />
           <Property Name="Expr7" Type="nvarchar" MaxLength="50" />
@@ -276,18 +268,6 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
           <Property Name="ObrzacPutneIsprave" Type="nchar" MaxLength="10" />
           <Property Name="AdministrativnaTaksa" Type="nchar" MaxLength="10" />
         </EntityType>
-        <Association Name="FK_Gradjanin_MaloletnoLice">
-          <End Role="MaloletnoLice" Type="Self.MaloletnoLice" Multiplicity="1" />
-          <End Role="Gradjanin" Type="Self.Gradjanin" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MaloletnoLice">
-              <PropertyRef Name="MaloletnoLiceID" />
-            </Principal>
-            <Dependent Role="Gradjanin">
-              <PropertyRef Name="MaloletnoLiceID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_InformacijeOPasosu_IzdavanjePasosa">
           <End Role="IzdavanjePasosa" Type="Self.IzdavanjePasosa" Multiplicity="1" />
           <End Role="InformacijeOPasosu" Type="Self.InformacijeOPasosu" Multiplicity="*" />
@@ -385,7 +365,6 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
           <EntitySet Name="vwGradjanin" EntityType="Self.vwGradjanin" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vwGradjanin].[GradjaninID] AS [GradjaninID], 
-    [vwGradjanin].[Tip] AS [Tip], 
     [vwGradjanin].[Ime] AS [Ime], 
     [vwGradjanin].[Prezime] AS [Prezime], 
     [vwGradjanin].[JMBG] AS [JMBG], 
@@ -395,15 +374,8 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
     [vwGradjanin].[MestoRodjenja] AS [MestoRodjenja], 
     [vwGradjanin].[Prebivaliste] AS [Prebivaliste], 
     [vwGradjanin].[KodDrzave] AS [KodDrzave], 
-    [vwGradjanin].[MaloletnoLiceID] AS [MaloletnoLiceID], 
     [vwGradjanin].[VaziDo] AS [VaziDo], 
-    [vwGradjanin].[Expr1] AS [Expr1], 
-    [vwGradjanin].[UverenjeODrzavljanstvu] AS [UverenjeODrzavljanstvu], 
-    [vwGradjanin].[IzvodMaticneKnjigeRodjenih] AS [IzvodMaticneKnjigeRodjenih], 
-    [vwGradjanin].[UplaceneNaknade] AS [UplaceneNaknade], 
-    [vwGradjanin].[SaglasnostRoditelja] AS [SaglasnostRoditelja], 
-    [vwGradjanin].[Fotografija] AS [Fotografija], 
-    [vwGradjanin].[RokVazenja] AS [RokVazenja]
+    [vwGradjanin].[BrojDokumenta] AS [BrojDokumenta]
     FROM [dbo].[vwGradjanin] AS [vwGradjanin]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vwInformacijeOPasosu" EntityType="Self.vwInformacijeOPasosu" store:Type="Views" store:Schema="dbo">
@@ -459,8 +431,8 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
     [vwPasos].[GradjaninID] AS [GradjaninID], 
     [vwPasos].[MaloletnoLiceID] AS [MaloletnoLiceID], 
     [vwPasos].[IzgubljenPasosID] AS [IzgubljenPasosID], 
+    [vwPasos].[TipDokumenta] AS [TipDokumenta], 
     [vwPasos].[Expr1] AS [Expr1], 
-    [vwPasos].[Tip] AS [Tip], 
     [vwPasos].[Ime] AS [Ime], 
     [vwPasos].[Prezime] AS [Prezime], 
     [vwPasos].[JMBG] AS [JMBG], 
@@ -470,24 +442,25 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
     [vwPasos].[MestoRodjenja] AS [MestoRodjenja], 
     [vwPasos].[Prebivaliste] AS [Prebivaliste], 
     [vwPasos].[KodDrzave] AS [KodDrzave], 
-    [vwPasos].[Expr2] AS [Expr2], 
     [vwPasos].[VaziDo] AS [VaziDo], 
+    [vwPasos].[BrojDokumenta] AS [BrojDokumenta], 
+    [vwPasos].[Email] AS [Email], 
+    [vwPasos].[IzdavanjePasosaID] AS [IzdavanjePasosaID], 
+    [vwPasos].[ProduzetakPasosaID] AS [ProduzetakPasosaID], 
+    [vwPasos].[Expr2] AS [Expr2], 
+    [vwPasos].[PrijavaNestanka] AS [PrijavaNestanka], 
+    [vwPasos].[NevazecaIsprava] AS [NevazecaIsprava], 
+    [vwPasos].[Expr3] AS [Expr3], 
+    [vwPasos].[Expr4] AS [Expr4], 
     [vwPasos].[UverenjeODrzavljanstvu] AS [UverenjeODrzavljanstvu], 
     [vwPasos].[IzvodMaticneKnjigeRodjenih] AS [IzvodMaticneKnjigeRodjenih], 
     [vwPasos].[UplaceneNaknade] AS [UplaceneNaknade], 
     [vwPasos].[SaglasnostRoditelja] AS [SaglasnostRoditelja], 
     [vwPasos].[Fotografija] AS [Fotografija], 
     [vwPasos].[RokVazenja] AS [RokVazenja], 
-    [vwPasos].[Expr4] AS [Expr4], 
+    [vwPasos].[Expr5] AS [Expr5], 
     [vwPasos].[ObrzacPutneIsprave] AS [ObrzacPutneIsprave], 
     [vwPasos].[AdministrativnaTaksa] AS [AdministrativnaTaksa], 
-    [vwPasos].[Expr5] AS [Expr5], 
-    [vwPasos].[PrijavaNestanka] AS [PrijavaNestanka], 
-    [vwPasos].[NevazecaIsprava] AS [NevazecaIsprava], 
-    [vwPasos].[VadiNoviPasos] AS [VadiNoviPasos], 
-    [vwPasos].[Email] AS [Email], 
-    [vwPasos].[IzdavanjePasosaID] AS [IzdavanjePasosaID], 
-    [vwPasos].[ProduzetakPasosaID] AS [ProduzetakPasosaID], 
     [vwPasos].[LicnaKarta] AS [LicnaKarta], 
     [vwPasos].[Expr6] AS [Expr6], 
     [vwPasos].[Expr7] AS [Expr7], 
@@ -511,10 +484,6 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
     [vwUplata].[AdministrativnaTaksa] AS [AdministrativnaTaksa]
     FROM [dbo].[vwUplata] AS [vwUplata]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK_Gradjanin_MaloletnoLice" Association="Self.FK_Gradjanin_MaloletnoLice">
-            <End Role="MaloletnoLice" EntitySet="MaloletnoLice" />
-            <End Role="Gradjanin" EntitySet="Gradjanin" />
-          </AssociationSet>
           <AssociationSet Name="FK_InformacijeOPasosu_IzdavanjePasosa" Association="Self.FK_InformacijeOPasosu_IzdavanjePasosa">
             <End Role="IzdavanjePasosa" EntitySet="IzdavanjePasosa" />
             <End Role="InformacijeOPasosu" EntitySet="InformacijeOPasosu" />
@@ -554,7 +523,6 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
             <PropertyRef Name="GradjaninID" />
           </Key>
           <Property Name="GradjaninID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Tip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="JMBG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -564,9 +532,8 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
           <Property Name="MestoRodjenja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Prebivaliste" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="KodDrzave" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MaloletnoLiceID" Type="Int32" Nullable="false" />
           <Property Name="VaziDo" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="MaloletnoLouse" Relationship="Self.FK_Gradjanin_MaloletnoLice" FromRole="Gradjanin" ToRole="MaloletnoLice" />
+          <Property Name="BrojDokumenta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Pasos" Relationship="Self.FK_Pasos_Gradjanin" FromRole="Gradjanin" ToRole="Pasos" />
         </EntityType>
         <EntityType Name="InformacijeOPasosu">
@@ -615,7 +582,6 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
           <Property Name="SaglasnostRoditelja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Fotografija" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="RokVazenja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Gradjanins" Relationship="Self.FK_Gradjanin_MaloletnoLice" FromRole="MaloletnoLice" ToRole="Gradjanin" />
           <NavigationProperty Name="Pasos" Relationship="Self.FK_Pasos_MaloletnoLice" FromRole="MaloletnoLice" ToRole="Pasos" />
         </EntityType>
         <EntityType Name="Paso">
@@ -625,12 +591,13 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
           <Property Name="PasosID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IzdajePU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Drzava" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Telefon" Type="Int32" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="InformacijeOPasosuID" Type="Int32" Nullable="false" />
           <Property Name="UplataID" Type="Int32" Nullable="false" />
           <Property Name="GradjaninID" Type="Int32" Nullable="false" />
           <Property Name="MaloletnoLiceID" Type="Int32" Nullable="false" />
           <Property Name="IzgubljenPasosID" Type="Int32" Nullable="false" />
+          <Property Name="TipDokumenta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Gradjanin" Relationship="Self.FK_Pasos_Gradjanin" FromRole="Pasos" ToRole="Gradjanin" />
           <NavigationProperty Name="InformacijeOPasosu" Relationship="Self.FK_Pasos_InformacijeOPasosu" FromRole="Pasos" ToRole="InformacijeOPasosu" />
           <NavigationProperty Name="IzgubljenPaso" Relationship="Self.FK_Pasos_IzgubljenPasos" FromRole="Pasos" ToRole="IzgubljenPasos" />
@@ -669,11 +636,8 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
         <EntityType Name="vwGradjanin">
           <Key>
             <PropertyRef Name="GradjaninID" />
-            <PropertyRef Name="MaloletnoLiceID" />
-            <PropertyRef Name="Expr1" />
           </Key>
-          <Property Name="GradjaninID" Type="Int32" Nullable="false" />
-          <Property Name="Tip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GradjaninID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="JMBG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -683,15 +647,8 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
           <Property Name="MestoRodjenja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Prebivaliste" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="KodDrzave" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MaloletnoLiceID" Type="Int32" Nullable="false" />
-          <Property Name="VaziDo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Expr1" Type="Int32" Nullable="false" />
-          <Property Name="UverenjeODrzavljanstvu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IzvodMaticneKnjigeRodjenih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UplaceneNaknade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SaglasnostRoditelja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Fotografija" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="RokVazenja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VaziDo" Type="DateTime" Precision="0" />
+          <Property Name="BrojDokumenta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vwInformacijeOPasosu">
           <Key>
@@ -752,23 +709,24 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
             <PropertyRef Name="MaloletnoLiceID" />
             <PropertyRef Name="IzgubljenPasosID" />
             <PropertyRef Name="Expr1" />
-            <PropertyRef Name="Expr2" />
-            <PropertyRef Name="Expr4" />
-            <PropertyRef Name="Expr5" />
             <PropertyRef Name="IzdavanjePasosaID" />
             <PropertyRef Name="ProduzetakPasosaID" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="Expr3" />
+            <PropertyRef Name="Expr4" />
+            <PropertyRef Name="Expr5" />
           </Key>
           <Property Name="PasosID" Type="Int32" Nullable="false" />
           <Property Name="IzdajePU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Drzava" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Telefon" Type="Int32" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="InformacijeOPasosuID" Type="Int32" Nullable="false" />
           <Property Name="UplataID" Type="Int32" Nullable="false" />
           <Property Name="GradjaninID" Type="Int32" Nullable="false" />
           <Property Name="MaloletnoLiceID" Type="Int32" Nullable="false" />
           <Property Name="IzgubljenPasosID" Type="Int32" Nullable="false" />
+          <Property Name="TipDokumenta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Expr1" Type="Int32" Nullable="false" />
-          <Property Name="Tip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="JMBG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -778,24 +736,25 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
           <Property Name="MestoRodjenja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Prebivaliste" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="KodDrzave" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VaziDo" Type="DateTime" Precision="0" />
+          <Property Name="BrojDokumenta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IzdavanjePasosaID" Type="Int32" Nullable="false" />
+          <Property Name="ProduzetakPasosaID" Type="Int32" Nullable="false" />
           <Property Name="Expr2" Type="Int32" Nullable="false" />
-          <Property Name="VaziDo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrijavaNestanka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NevazecaIsprava" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Expr3" Type="Int32" Nullable="false" />
+          <Property Name="Expr4" Type="Int32" Nullable="false" />
           <Property Name="UverenjeODrzavljanstvu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IzvodMaticneKnjigeRodjenih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UplaceneNaknade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SaglasnostRoditelja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Fotografija" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="RokVazenja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Expr4" Type="Int32" Nullable="false" />
+          <Property Name="Expr5" Type="Int32" Nullable="false" />
           <Property Name="ObrzacPutneIsprave" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="AdministrativnaTaksa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Expr5" Type="Int32" Nullable="false" />
-          <Property Name="PrijavaNestanka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NevazecaIsprava" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="VadiNoviPasos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IzdavanjePasosaID" Type="Int32" Nullable="false" />
-          <Property Name="ProduzetakPasosaID" Type="Int32" Nullable="false" />
           <Property Name="LicnaKarta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Expr6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Expr7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -820,18 +779,6 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
           <Property Name="ObrzacPutneIsprave" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="AdministrativnaTaksa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
-        <Association Name="FK_Gradjanin_MaloletnoLice">
-          <End Role="MaloletnoLice" Type="Self.MaloletnoLouse" Multiplicity="1" />
-          <End Role="Gradjanin" Type="Self.Gradjanin" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MaloletnoLice">
-              <PropertyRef Name="MaloletnoLiceID" />
-            </Principal>
-            <Dependent Role="Gradjanin">
-              <PropertyRef Name="MaloletnoLiceID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Pasos_Gradjanin">
           <End Role="Gradjanin" Type="Self.Gradjanin" Multiplicity="1" />
           <End Role="Pasos" Type="Self.Paso" Multiplicity="*" />
@@ -934,10 +881,6 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
           <EntitySet Name="vwPasos" EntityType="Self.vwPaso" />
           <EntitySet Name="vwProduzetakPasosas" EntityType="Self.vwProduzetakPasosa" />
           <EntitySet Name="vwUplatas" EntityType="Self.vwUplata" />
-          <AssociationSet Name="FK_Gradjanin_MaloletnoLice" Association="Self.FK_Gradjanin_MaloletnoLice">
-            <End Role="MaloletnoLice" EntitySet="MaloletnoLice" />
-            <End Role="Gradjanin" EntitySet="Gradjanins" />
-          </AssociationSet>
           <AssociationSet Name="FK_Pasos_Gradjanin" Association="Self.FK_Pasos_Gradjanin">
             <End Role="Gradjanin" EntitySet="Gradjanins" />
             <End Role="Pasos" EntitySet="Pasos" />
@@ -977,7 +920,6 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
             <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.Gradjanin">
               <MappingFragment StoreEntitySet="Gradjanin">
                 <ScalarProperty Name="GradjaninID" ColumnName="GradjaninID" />
-                <ScalarProperty Name="Tip" ColumnName="Tip" />
                 <ScalarProperty Name="Ime" ColumnName="Ime" />
                 <ScalarProperty Name="Prezime" ColumnName="Prezime" />
                 <ScalarProperty Name="JMBG" ColumnName="JMBG" />
@@ -987,8 +929,8 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
                 <ScalarProperty Name="MestoRodjenja" ColumnName="MestoRodjenja" />
                 <ScalarProperty Name="Prebivaliste" ColumnName="Prebivaliste" />
                 <ScalarProperty Name="KodDrzave" ColumnName="KodDrzave" />
-                <ScalarProperty Name="MaloletnoLiceID" ColumnName="MaloletnoLiceID" />
                 <ScalarProperty Name="VaziDo" ColumnName="VaziDo" />
+                <ScalarProperty Name="BrojDokumenta" ColumnName="BrojDokumenta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1050,6 +992,7 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
                 <ScalarProperty Name="GradjaninID" ColumnName="GradjaninID" />
                 <ScalarProperty Name="MaloletnoLiceID" ColumnName="MaloletnoLiceID" />
                 <ScalarProperty Name="IzgubljenPasosID" ColumnName="IzgubljenPasosID" />
+                <ScalarProperty Name="TipDokumenta" ColumnName="TipDokumenta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1087,7 +1030,6 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
             <EntityTypeMapping TypeName="LicnaDokumentaPasosModel.vwGradjanin">
               <MappingFragment StoreEntitySet="vwGradjanin">
                 <ScalarProperty Name="GradjaninID" ColumnName="GradjaninID" />
-                <ScalarProperty Name="Tip" ColumnName="Tip" />
                 <ScalarProperty Name="Ime" ColumnName="Ime" />
                 <ScalarProperty Name="Prezime" ColumnName="Prezime" />
                 <ScalarProperty Name="JMBG" ColumnName="JMBG" />
@@ -1097,15 +1039,8 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
                 <ScalarProperty Name="MestoRodjenja" ColumnName="MestoRodjenja" />
                 <ScalarProperty Name="Prebivaliste" ColumnName="Prebivaliste" />
                 <ScalarProperty Name="KodDrzave" ColumnName="KodDrzave" />
-                <ScalarProperty Name="MaloletnoLiceID" ColumnName="MaloletnoLiceID" />
                 <ScalarProperty Name="VaziDo" ColumnName="VaziDo" />
-                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
-                <ScalarProperty Name="UverenjeODrzavljanstvu" ColumnName="UverenjeODrzavljanstvu" />
-                <ScalarProperty Name="IzvodMaticneKnjigeRodjenih" ColumnName="IzvodMaticneKnjigeRodjenih" />
-                <ScalarProperty Name="UplaceneNaknade" ColumnName="UplaceneNaknade" />
-                <ScalarProperty Name="SaglasnostRoditelja" ColumnName="SaglasnostRoditelja" />
-                <ScalarProperty Name="Fotografija" ColumnName="Fotografija" />
-                <ScalarProperty Name="RokVazenja" ColumnName="RokVazenja" />
+                <ScalarProperty Name="BrojDokumenta" ColumnName="BrojDokumenta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1171,8 +1106,8 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
                 <ScalarProperty Name="GradjaninID" ColumnName="GradjaninID" />
                 <ScalarProperty Name="MaloletnoLiceID" ColumnName="MaloletnoLiceID" />
                 <ScalarProperty Name="IzgubljenPasosID" ColumnName="IzgubljenPasosID" />
+                <ScalarProperty Name="TipDokumenta" ColumnName="TipDokumenta" />
                 <ScalarProperty Name="Expr1" ColumnName="Expr1" />
-                <ScalarProperty Name="Tip" ColumnName="Tip" />
                 <ScalarProperty Name="Ime" ColumnName="Ime" />
                 <ScalarProperty Name="Prezime" ColumnName="Prezime" />
                 <ScalarProperty Name="JMBG" ColumnName="JMBG" />
@@ -1182,24 +1117,25 @@ warning 6002: The table/view 'LicnaDokumentaPasos.dbo.vwUplata' does not have a 
                 <ScalarProperty Name="MestoRodjenja" ColumnName="MestoRodjenja" />
                 <ScalarProperty Name="Prebivaliste" ColumnName="Prebivaliste" />
                 <ScalarProperty Name="KodDrzave" ColumnName="KodDrzave" />
-                <ScalarProperty Name="Expr2" ColumnName="Expr2" />
                 <ScalarProperty Name="VaziDo" ColumnName="VaziDo" />
+                <ScalarProperty Name="BrojDokumenta" ColumnName="BrojDokumenta" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="IzdavanjePasosaID" ColumnName="IzdavanjePasosaID" />
+                <ScalarProperty Name="ProduzetakPasosaID" ColumnName="ProduzetakPasosaID" />
+                <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+                <ScalarProperty Name="PrijavaNestanka" ColumnName="PrijavaNestanka" />
+                <ScalarProperty Name="NevazecaIsprava" ColumnName="NevazecaIsprava" />
+                <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+                <ScalarProperty Name="Expr4" ColumnName="Expr4" />
                 <ScalarProperty Name="UverenjeODrzavljanstvu" ColumnName="UverenjeODrzavljanstvu" />
                 <ScalarProperty Name="IzvodMaticneKnjigeRodjenih" ColumnName="IzvodMaticneKnjigeRodjenih" />
                 <ScalarProperty Name="UplaceneNaknade" ColumnName="UplaceneNaknade" />
                 <ScalarProperty Name="SaglasnostRoditelja" ColumnName="SaglasnostRoditelja" />
                 <ScalarProperty Name="Fotografija" ColumnName="Fotografija" />
                 <ScalarProperty Name="RokVazenja" ColumnName="RokVazenja" />
-                <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+                <ScalarProperty Name="Expr5" ColumnName="Expr5" />
                 <ScalarProperty Name="ObrzacPutneIsprave" ColumnName="ObrzacPutneIsprave" />
                 <ScalarProperty Name="AdministrativnaTaksa" ColumnName="AdministrativnaTaksa" />
-                <ScalarProperty Name="Expr5" ColumnName="Expr5" />
-                <ScalarProperty Name="PrijavaNestanka" ColumnName="PrijavaNestanka" />
-                <ScalarProperty Name="NevazecaIsprava" ColumnName="NevazecaIsprava" />
-                <ScalarProperty Name="VadiNoviPasos" ColumnName="VadiNoviPasos" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="IzdavanjePasosaID" ColumnName="IzdavanjePasosaID" />
-                <ScalarProperty Name="ProduzetakPasosaID" ColumnName="ProduzetakPasosaID" />
                 <ScalarProperty Name="LicnaKarta" ColumnName="LicnaKarta" />
                 <ScalarProperty Name="Expr6" ColumnName="Expr6" />
                 <ScalarProperty Name="Expr7" ColumnName="Expr7" />

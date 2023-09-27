@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Lista o informacijama</h2>
+<h2>Lista informacija pasoša</h2>
 
 <p>
     @Html.ActionLink("Kreiranje nove informacije", "Create")
@@ -14,11 +14,8 @@
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.Telefon)
-        </th*@
         <th>
-            @Html.DisplayNameFor(model => model.IzdavanjePasosa.IzvodMaticneKnjigeRodjenih)
+            @Html.DisplayNameFor(model => model.IzdavanjePasosa.LicnaKarta)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ProduzetakPasosa.StariPasos)
@@ -32,11 +29,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.Telefon)
-            </td>*@
             <td>
-                @Html.DisplayFor(modelItem => item.IzdavanjePasosa.IzvodMaticneKnjigeRodjenih)
+                @Html.DisplayFor(modelItem => item.IzdavanjePasosa.LicnaKarta)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ProduzetakPasosa.StariPasos)
@@ -50,4 +44,4 @@
     }
 
 </table>
-<div>@Html.ActionLink("Pocetna strana", "Index", "Home")</div>
+<div>@Html.ActionLink("Početna strana", "Index", "Home")</div>

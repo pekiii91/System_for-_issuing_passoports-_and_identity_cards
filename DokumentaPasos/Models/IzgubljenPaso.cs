@@ -11,7 +11,8 @@ namespace DokumentaPasos.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class IzgubljenPaso
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +20,19 @@ namespace DokumentaPasos.Models
         {
             this.Pasos = new HashSet<Paso>();
         }
-    
+        [Key]
         public int IzgubljenPasosID { get; set; }
+
+        [Required(ErrorMessage = "Please your prijava nestanka")]
+        [Display(Name = "Prijava Nestanka")]
         public string PrijavaNestanka { get; set; }
+
+        [Required(ErrorMessage = "Please your nevazeca isprava")]
+        [Display(Name = "Nevazeca Isprava")]
         public string NevazecaIsprava { get; set; }
+
+        [Required(ErrorMessage = "Please your vadi novi pasos")]
+        [Display(Name = "Vadi Novi Pasos")]
         public string VadiNoviPasos { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

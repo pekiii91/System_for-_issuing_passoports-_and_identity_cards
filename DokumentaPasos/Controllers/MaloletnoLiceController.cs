@@ -12,7 +12,7 @@ namespace DokumentaPasos.Controllers
 {
     public class MaloletnoLiceController : Controller
     {
-        private readonly LicnaDokumentaPasosEntities db = new LicnaDokumentaPasosEntities();
+        private LicnaDokumentaPasosEntities db = new LicnaDokumentaPasosEntities();
 
         // GET: MaloletnoLice
         public ActionResult Index()

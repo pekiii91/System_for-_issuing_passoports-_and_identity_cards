@@ -11,23 +11,46 @@ namespace DokumentaPasos.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Paso
     {
+        [Key]
         public int PasosID { get; set; }
+
+        [Required(ErrorMessage = "Please your izdaje pu")]
+        [Display(Name = "Dokument Izdaje PU")]
         public string IzdajePU { get; set; }
+
+        [Required(ErrorMessage = "Please your drzava")]
         public string Drzava { get; set; }
-        public int Telefon { get; set; }
+
+        [Required(ErrorMessage = "Please your telefon")]
+        public string Telefon { get; set; }
         public int InformacijeOPasosuID { get; set; }
         public int UplataID { get; set; }
         public int GradjaninID { get; set; }
         public int MaloletnoLiceID { get; set; }
         public int IzgubljenPasosID { get; set; }
-    
+
+        [Required(ErrorMessage = "Please your tip dokumenta")]
+        [Display(Name = "Tip Dokumenta")]
+        public string TipDokumenta { get; set; }
+
+        [ForeignKey("GradjaninId")]
         public virtual Gradjanin Gradjanin { get; set; }
+
+        [ForeignKey("InformacijeOPasosuId")]
         public virtual InformacijeOPasosu InformacijeOPasosu { get; set; }
+
+        [ForeignKey("IzgubljenPasoId")]
         public virtual IzgubljenPaso IzgubljenPaso { get; set; }
+
+        [ForeignKey("MaloletnoLouseId")]
         public virtual MaloletnoLouse MaloletnoLouse { get; set; }
+
+        [ForeignKey("UplataId")]
         public virtual Uplata Uplata { get; set; }
     }
 }

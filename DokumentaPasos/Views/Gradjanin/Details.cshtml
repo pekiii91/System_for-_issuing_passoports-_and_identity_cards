@@ -4,19 +4,11 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Informacije o gradjanima</h2>
+<h2>Informacije o građaninu</h2>
 
 <div>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Tip)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Tip)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Ime)
         </dt>
@@ -98,15 +90,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MaloletnoLouse.UverenjeODrzavljanstvu)
+            @Html.DisplayNameFor(model => model.BrojDokumenta)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MaloletnoLouse.UverenjeODrzavljanstvu)
+            @Html.DisplayFor(model => model.BrojDokumenta)
         </dd>
+
     </dl>
 </div>
 <p>
     @Html.ActionLink("Izmeni", "Edit", new { id = Model.GradjaninID }) |
-    @Html.ActionLink("Lista građanina", "Index")
+    @Html.ActionLink("Lista građana", "Index")
 </p>

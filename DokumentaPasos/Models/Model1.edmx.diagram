@@ -4,25 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bb20d69fdc00430f88d41a2041ef7654" Name="Diagram1" ZoomLevel="74">
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.Gradjanin" Width="1.5" PointX="2.5" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.InformacijeOPasosu" Width="1.5" PointX="3.125" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.IzdavanjePasosa" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.IzgubljenPaso" Width="1.5" PointX="7.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.MaloletnoLouse" Width="1.5" PointX="0.5" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.Paso" Width="1.5" PointX="5.375" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.ProduzetakPasosa" Width="2" PointX="5.875" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.sysdiagram" Width="1.5" PointX="11.875" PointY="3.5" IsExpanded="false" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.Uplata" Width="1.5" PointX="7.875" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwGradjanin" Width="1.5" PointX="11.875" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwInformacijeOPasosu" Width="1.5" PointX="13.75" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwIzdavanjePasosa" Width="1.5" PointX="13.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwIzgubljenPaso" Width="1.5" PointX="11.875" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwMaloletnoLouse" Width="1.5" PointX="15.875" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwPaso" Width="1.5" PointX="9.875" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwProduzetakPasosa" Width="1.5" PointX="15.875" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwUplata" Width="1.5" PointX="15.875" PointY="3.125" IsExpanded="true" />
-        <AssociationConnector Association="LicnaDokumentaPasosModel.FK_Gradjanin_MaloletnoLice" ManuallyRouted="false" />
+      <Diagram DiagramId="6843ed069c774aefa3e8ebf7dd60ed49" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.Gradjanin" Width="1.5" PointX="7" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.InformacijeOPasosu" Width="1.5" PointX="2.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.IzdavanjePasosa" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.IzgubljenPaso" Width="1.5" PointX="2.625" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.MaloletnoLouse" Width="1.5" PointX="4.875" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.Paso" Width="1.5" PointX="4.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.ProduzetakPasosa" Width="1.5" PointX="0.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.sysdiagram" Width="1.5" PointX="16.5" PointY="4" IsExpanded="false" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.Uplata" Width="1.5" PointX="6.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwGradjanin" Width="1.5" PointX="10.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwInformacijeOPasosu" Width="1.5" PointX="12.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwIzdavanjePasosa" Width="1.5" PointX="12.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwIzgubljenPaso" Width="1.5" PointX="10.625" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwMaloletnoLouse" Width="1.5" PointX="14.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwPaso" Width="1.5" PointX="8.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwProduzetakPasosa" Width="1.5" PointX="12.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LicnaDokumentaPasosModel.vwUplata" Width="1.5" PointX="10.625" PointY="4.125" IsExpanded="true" />
         <AssociationConnector Association="LicnaDokumentaPasosModel.FK_Pasos_Gradjanin" ManuallyRouted="false" />
         <AssociationConnector Association="LicnaDokumentaPasosModel.FK_InformacijeOPasosu_IzdavanjePasosa" ManuallyRouted="false" />
         <AssociationConnector Association="LicnaDokumentaPasosModel.FK_InformacijeOPasosu_ProduzetakPasosa" ManuallyRouted="false" />

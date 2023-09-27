@@ -1,5 +1,4 @@
 ﻿@model DokumentaPasos.Models.Paso
-
 @{
     ViewBag.Title = "Details";
 }
@@ -34,11 +33,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Gradjanin.Tip)
+            @Html.DisplayNameFor(model => model.TipDokumenta)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Gradjanin.Tip)
+            @Html.DisplayFor(model => model.TipDokumenta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gradjanin.BrojDokumenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gradjanin.BrojDokumenta)
         </dd>
 
         <dt>
@@ -58,11 +65,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MaloletnoLouse.UverenjeODrzavljanstvu)
+            @Html.DisplayNameFor(model => model.MaloletnoLouse.SaglasnostRoditelja)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MaloletnoLouse.UverenjeODrzavljanstvu)
+            @Html.DisplayFor(model => model.MaloletnoLouse.SaglasnostRoditelja)
         </dd>
 
         <dt>

@@ -11,7 +11,9 @@ namespace DokumentaPasos.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class InformacijeOPasosu
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,14 +21,19 @@ namespace DokumentaPasos.Models
         {
             this.Pasos = new HashSet<Paso>();
         }
-    
+        [Key]
         public int InformacijeOPasosuID { get; set; }
+
+        [Required(ErrorMessage = "Please your email")]
         public string Email { get; set; }
         public int Telefon { get; set; }
         public int IzdavanjePasosaID { get; set; }
         public int ProduzetakPasosaID { get; set; }
-    
+
+        [ForeignKey("IzdavanjePasosaId")]
         public virtual IzdavanjePasosa IzdavanjePasosa { get; set; }
+
+        [ForeignKey("ProduzetakPasosaId")]
         public virtual ProduzetakPasosa ProduzetakPasosa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Paso> Pasos { get; set; }

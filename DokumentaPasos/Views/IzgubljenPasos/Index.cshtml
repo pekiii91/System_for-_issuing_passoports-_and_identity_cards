@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Kreiranje novog izgubljenog pasoša", "Create")
 </p>
-<table class="table">
+<table id="izgubljenId" class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.PrijavaNestanka)
@@ -44,4 +44,6 @@
     }
 
 </table>
-<div>@Html.ActionLink("Pocetna strana", "Index", "Home")</div>
+<div>@Html.ActionLink("Početna strana", "Index", "Home")</div>
+
+

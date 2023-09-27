@@ -1,5 +1,4 @@
 ﻿@model DokumentaPasos.Models.Paso
-
 @{
     ViewBag.Title = "Edit";
 }
@@ -41,7 +40,7 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2" for="InformacijeOPasosuID">Informacije</label>
+            <label class="control-label col-md-2" for="InformacijeOPasosuID">Email</label>
             <div class="col-md-10">
                 @Html.DropDownList("InformacijeOPasosuID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.InformacijeOPasosuID, "", new { @class = "text-danger" })
@@ -49,7 +48,7 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2" for="UplataID">Uplata</label>
+            <label class="control-label col-md-2" for="UplataID">Obrazac Putne Isprave</label>
             <div class="col-md-10">
                 @Html.DropDownList("UplataID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.UplataID, "", new { @class = "text-danger" })
@@ -57,7 +56,7 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2" for="GradjaninID">Gradjanin</label>
+            <label class="control-label col-md-2" for="GradjaninID">Broj Pasoša</label>
             <div class="col-md-10">
                 @Html.DropDownList("GradjaninID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.GradjaninID, "", new { @class = "text-danger" })
@@ -65,7 +64,7 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2" for="MaloletnoLiceID">Maloletno Lice</label>
+            <label class="control-label col-md-2" for="MaloletnoLiceID">Saglasnost Roditelja</label>
             <div class="col-md-10">
                 @Html.DropDownList("MaloletnoLiceID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MaloletnoLiceID, "", new { @class = "text-danger" })
@@ -73,10 +72,18 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2" for="IzgubljenPasosID">Izgubljen Pasos</label>
+            <label class="control-label col-md-2" for="IzgubljenPasosID">Prijava Nestanka</label>
             <div class="col-md-10">
                 @Html.DropDownList("IzgubljenPasosID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IzgubljenPasosID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TipDokumenta, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TipDokumenta, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TipDokumenta, "", new { @class = "text-danger" })
             </div>
         </div>
 

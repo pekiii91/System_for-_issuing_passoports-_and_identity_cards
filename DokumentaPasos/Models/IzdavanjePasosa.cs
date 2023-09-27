@@ -11,7 +11,8 @@ namespace DokumentaPasos.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class IzdavanjePasosa
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,12 +20,24 @@ namespace DokumentaPasos.Models
         {
             this.InformacijeOPasosus = new HashSet<InformacijeOPasosu>();
         }
-    
+        [Key]
         public int IzdavanjePasosaID { get; set; }
+
+        [Required(ErrorMessage = "Please your licna karta")]
+        [Display(Name = "Licna Karta")]
         public string LicnaKarta { get; set; }
         public string Fotografija { get; set; }
+
+        [Required(ErrorMessage = "Please your izvod maticne knjige rodjenih")]
+        [Display(Name = "Izvod Maticne Knjige Rodjenih")]
         public string IzvodMaticneKnjigeRodjenih { get; set; }
+
+        [Required(ErrorMessage = "Please your uverenje o drzavljanstvu")]
+        [Display(Name = "Uverenje O Drzavljanstvu")]
         public string UverenjeODrzavljanstvu { get; set; }
+
+        [Required(ErrorMessage = "Please your uplata za pasos")]
+        [Display(Name = "Uplata Za Pasos")]
         public string UplataZaPasos { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

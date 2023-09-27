@@ -17,14 +17,14 @@ namespace DokumentaPasos.Models
         public int PasosID { get; set; }
         public string IzdajePU { get; set; }
         public string Drzava { get; set; }
-        public int Telefon { get; set; }
+        public string Telefon { get; set; }
         public int InformacijeOPasosuID { get; set; }
         public int UplataID { get; set; }
         public int GradjaninID { get; set; }
         public int MaloletnoLiceID { get; set; }
         public int IzgubljenPasosID { get; set; }
+        public string TipDokumenta { get; set; }
         public int Expr1 { get; set; }
-        public string Tip { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string JMBG { get; set; }
@@ -34,24 +34,25 @@ namespace DokumentaPasos.Models
         public string MestoRodjenja { get; set; }
         public string Prebivaliste { get; set; }
         public string KodDrzave { get; set; }
+        public Nullable<System.DateTime> VaziDo { get; set; }
+        public string BrojDokumenta { get; set; }
+        public string Email { get; set; }
+        public int IzdavanjePasosaID { get; set; }
+        public int ProduzetakPasosaID { get; set; }
         public int Expr2 { get; set; }
-        public string VaziDo { get; set; }
+        public string PrijavaNestanka { get; set; }
+        public string NevazecaIsprava { get; set; }
+        public int Expr3 { get; set; }
+        public int Expr4 { get; set; }
         public string UverenjeODrzavljanstvu { get; set; }
         public string IzvodMaticneKnjigeRodjenih { get; set; }
         public string UplaceneNaknade { get; set; }
         public string SaglasnostRoditelja { get; set; }
         public string Fotografija { get; set; }
         public string RokVazenja { get; set; }
-        public int Expr4 { get; set; }
+        public int Expr5 { get; set; }
         public string ObrzacPutneIsprave { get; set; }
         public string AdministrativnaTaksa { get; set; }
-        public int Expr5 { get; set; }
-        public string PrijavaNestanka { get; set; }
-        public string NevazecaIsprava { get; set; }
-        public string VadiNoviPasos { get; set; }
-        public string Email { get; set; }
-        public int IzdavanjePasosaID { get; set; }
-        public int ProduzetakPasosaID { get; set; }
         public string LicnaKarta { get; set; }
         public string Expr6 { get; set; }
         public string Expr7 { get; set; }

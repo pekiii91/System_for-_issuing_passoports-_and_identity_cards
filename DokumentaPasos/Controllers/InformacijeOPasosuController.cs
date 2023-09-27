@@ -39,8 +39,8 @@ namespace DokumentaPasos.Controllers
         // GET: InformacijeOPasosu/Create
         public ActionResult Create()
         {
-            ViewBag.IzdavanjePasosaID = new SelectList(db.IzdavanjePasosas, "IzdavanjePasosaID", "IzvodMaticneKnjigeRodjenih");
-            ViewBag.ProduzetakPasosaID = new SelectList(db.ProduzetakPasosas, "ProduzetekPasosaID", "LicnaKarta");
+            ViewBag.IzdavanjePasosaID = new SelectList(db.IzdavanjePasosas, "IzdavanjePasosaID", "LicnaKarta");
+            ViewBag.ProduzetakPasosaID = new SelectList(db.ProduzetakPasosas, "ProduzetekPasosaID", "StariPasos");
             return View();
         }
 
@@ -58,8 +58,8 @@ namespace DokumentaPasos.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IzdavanjePasosaID = new SelectList(db.IzdavanjePasosas, "IzdavanjePasosaID", "IzvodMaticneKnjigeRodjenih", informacijeOPasosu.IzdavanjePasosaID);
-            ViewBag.ProduzetakPasosaID = new SelectList(db.ProduzetakPasosas, "ProduzetekPasosaID", "LicnaKarta", informacijeOPasosu.ProduzetakPasosaID);
+            ViewBag.IzdavanjePasosaID = new SelectList(db.IzdavanjePasosas, "IzdavanjePasosaID", "LicnaKarta", informacijeOPasosu.IzdavanjePasosaID);
+            ViewBag.ProduzetakPasosaID = new SelectList(db.ProduzetakPasosas, "ProduzetekPasosaID", "StariPasos", informacijeOPasosu.ProduzetakPasosaID);
             return View(informacijeOPasosu);
         }
 
@@ -75,8 +75,8 @@ namespace DokumentaPasos.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.IzdavanjePasosaID = new SelectList(db.IzdavanjePasosas, "IzdavanjePasosaID", "IzvodMaticneKnjigeRodjenih", informacijeOPasosu.IzdavanjePasosaID);
-            ViewBag.ProduzetakPasosaID = new SelectList(db.ProduzetakPasosas, "ProduzetekPasosaID", "LicnaKarta", informacijeOPasosu.ProduzetakPasosaID);
+            ViewBag.IzdavanjePasosaID = new SelectList(db.IzdavanjePasosas, "IzdavanjePasosaID", "LicnaKarta", informacijeOPasosu.IzdavanjePasosaID);
+            ViewBag.ProduzetakPasosaID = new SelectList(db.ProduzetakPasosas, "ProduzetekPasosaID", "StariPasos", informacijeOPasosu.ProduzetakPasosaID);
             return View(informacijeOPasosu);
         }
 
@@ -93,8 +93,8 @@ namespace DokumentaPasos.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IzdavanjePasosaID = new SelectList(db.IzdavanjePasosas, "IzdavanjePasosaID", "IzvodMaticneKnjigeRodjenih", informacijeOPasosu.IzdavanjePasosaID);
-            ViewBag.ProduzetakPasosaID = new SelectList(db.ProduzetakPasosas, "ProduzetekPasosaID", "LicnaKarta", informacijeOPasosu.ProduzetakPasosaID);
+            ViewBag.IzdavanjePasosaID = new SelectList(db.IzdavanjePasosas, "IzdavanjePasosaID", "LicnaKarta", informacijeOPasosu.IzdavanjePasosaID);
+            ViewBag.ProduzetakPasosaID = new SelectList(db.ProduzetakPasosas, "ProduzetekPasosaID", "StariPasos", informacijeOPasosu.ProduzetakPasosaID);
             return View(informacijeOPasosu);
         }
 

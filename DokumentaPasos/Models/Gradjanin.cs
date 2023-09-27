@@ -11,7 +11,8 @@ namespace DokumentaPasos.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Gradjanin
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,22 +20,54 @@ namespace DokumentaPasos.Models
         {
             this.Pasos = new HashSet<Paso>();
         }
-    
+
+        [Key]
         public int GradjaninID { get; set; }
-        public string Tip { get; set; }
+
+        [Required(ErrorMessage = "Please your ime")]
         public string Ime { get; set; }
+
+        [Required(ErrorMessage = "Please your prezime")]
         public string Prezime { get; set; }
+
+        [Required(ErrorMessage = "Please your addressed jmbg")]
+        [StringLength(13)]
         public string JMBG { get; set; }
+
+        [Required(ErrorMessage = "Please your pol")]
         public string Pol { get; set; }
+
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
+        [DataType(DataType.Date)]
+        [Display(Name ="Datum Izdavanja")]
         public Nullable<System.DateTime> DatumIzdavanja { get; set; }
+
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
+        [DataType(DataType.Date)]
+        [Display(Name = "Datum Rodjenja")]
         public Nullable<System.DateTime> DatumRodjenja { get; set; }
+
+        [Required(ErrorMessage = "Please your mesto rodjenja")]
+        [Display(Name = "Mesto Rodjenja")]
         public string MestoRodjenja { get; set; }
+
+        [Required(ErrorMessage = "Please your prebivaliste")]
         public string Prebivaliste { get; set; }
+
+        [Required(ErrorMessage = "Please your kod drzave")]
+        [Display(Name = "Kod Drzave")]
         public string KodDrzave { get; set; }
-        public int MaloletnoLiceID { get; set; }
+
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
+        [DataType(DataType.Date)]
+        [Display(Name = "Vazi Do")]
         public Nullable<System.DateTime> VaziDo { get; set; }
+
+        [Required(ErrorMessage = "Please your broj dokumenta")]
+        [Display(Name = "Broj Dokumenta")]
+        [StringLength(9)]
+        public string BrojDokumenta { get; set; }
     
-        public virtual MaloletnoLouse MaloletnoLouse { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Paso> Pasos { get; set; }
     }

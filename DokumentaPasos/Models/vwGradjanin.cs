@@ -15,7 +15,6 @@ namespace DokumentaPasos.Models
     public partial class vwGradjanin
     {
         public int GradjaninID { get; set; }
-        public string Tip { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string JMBG { get; set; }
@@ -25,14 +24,7 @@ namespace DokumentaPasos.Models
         public string MestoRodjenja { get; set; }
         public string Prebivaliste { get; set; }
         public string KodDrzave { get; set; }
-        public int MaloletnoLiceID { get; set; }
-        public string VaziDo { get; set; }
-        public int Expr1 { get; set; }
-        public string UverenjeODrzavljanstvu { get; set; }
-        public string IzvodMaticneKnjigeRodjenih { get; set; }
-        public string UplaceneNaknade { get; set; }
-        public string SaglasnostRoditelja { get; set; }
-        public string Fotografija { get; set; }
-        public string RokVazenja { get; set; }
+        public Nullable<System.DateTime> VaziDo { get; set; }
+        public string BrojDokumenta { get; set; }
     }
 }

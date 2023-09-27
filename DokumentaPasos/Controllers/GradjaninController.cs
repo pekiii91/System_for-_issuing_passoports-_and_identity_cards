@@ -12,13 +12,12 @@ namespace DokumentaPasos.Controllers
 {
     public class GradjaninController : Controller
     {
-        private readonly LicnaDokumentaPasosEntities db = new LicnaDokumentaPasosEntities();
+        private LicnaDokumentaPasosEntities db = new LicnaDokumentaPasosEntities();
 
         // GET: Gradjanin
         public ActionResult Index()
         {
-            var gradjanins = db.Gradjanins.Include(g => g.MaloletnoLouse);
-            return View(gradjanins.ToList());
+            return View(db.Gradjanins.ToList());
         }
 
         // GET: Gradjanin/Details/5
@@ -39,7 +38,6 @@ namespace DokumentaPasos.Controllers
         // GET: Gradjanin/Create
         public ActionResult Create()
         {
-            ViewBag.MaloletnoLiceID = new SelectList(db.MaloletnoLice, "MaloletnoLiceID", "UverenjeODrzavljanstvu");
             return View();
         }
 
@@ -48,9 +46,7 @@ namespace DokumentaPasos.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "GradjaninID,Tip,Ime,Prezime,JMBG," +
-            "Pol,DatumIzdavanja,DatumRodjenja,MestoRodjenja," +
-            "Prebivaliste,KodDrzave,MaloletnoLiceID,VaziDo")] Gradjanin gradjanin)
+        public ActionResult Create([Bind(Include = "GradjaninID,Ime,Prezime,JMBG,Pol,DatumIzdavanja,DatumRodjenja,MestoRodjenja,Prebivaliste,KodDrzave,VaziDo,BrojDokumenta")] Gradjanin gradjanin)
         {
             if (ModelState.IsValid)
             {
@@ -59,11 +55,7 @@ namespace DokumentaPasos.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MaloletnoLiceID = new SelectList(db.MaloletnoLice, "MaloletnoLiceID",
-                "UverenjeODrzavljanstvu", gradjanin.MaloletnoLiceID);
-
             return View(gradjanin);
-
         }
 
         // GET: Gradjanin/Edit/5
@@ -78,8 +70,6 @@ namespace DokumentaPasos.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MaloletnoLiceID = new SelectList(db.MaloletnoLice, "MaloletnoLiceID", 
-                "UverenjeODrzavljanstvu", gradjanin.MaloletnoLiceID);
             return View(gradjanin);
         }
 
@@ -88,9 +78,7 @@ namespace DokumentaPasos.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "GradjaninID,Tip,Ime,Prezime,JMBG,Pol," +
-            "DatumIzdavanja,DatumRodjenja,MestoRodjenja,Prebivaliste,KodDrzave," +
-            "MaloletnoLiceID,VaziDo")] Gradjanin gradjanin)
+        public ActionResult Edit([Bind(Include = "GradjaninID,Ime,Prezime,JMBG,Pol,DatumIzdavanja,DatumRodjenja,MestoRodjenja,Prebivaliste,KodDrzave,VaziDo,BrojDokumenta")] Gradjanin gradjanin)
         {
             if (ModelState.IsValid)
             {
@@ -98,8 +86,6 @@ namespace DokumentaPasos.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MaloletnoLiceID = new SelectList(db.MaloletnoLice, "MaloletnoLiceID", 
-                "UverenjeODrzavljanstvu", gradjanin.MaloletnoLiceID);
             return View(gradjanin);
         }
 

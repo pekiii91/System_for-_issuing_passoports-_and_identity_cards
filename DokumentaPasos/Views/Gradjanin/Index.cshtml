@@ -4,16 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Lista gradjana</h2>
+<h2>Lista građana</h2>
 
 <p>
-    @Html.ActionLink("Kreiranje novog gradjanina", "Create")
+    @Html.ActionLink("Kreiraj novog građanina", "Create")
 </p>
-<table class="table">
+<table id="myGradjanin" class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Tip)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Ime)
         </th>
@@ -45,7 +42,7 @@
             @Html.DisplayNameFor(model => model.VaziDo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MaloletnoLouse.UverenjeODrzavljanstvu)
+            @Html.DisplayNameFor(model => model.BrojDokumenta)
         </th>
         <th></th>
     </tr>
@@ -53,9 +50,6 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tip)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Ime)
             </td>
@@ -87,15 +81,20 @@
                 @Html.DisplayFor(modelItem => item.VaziDo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MaloletnoLouse.UverenjeODrzavljanstvu)
+                @Html.DisplayFor(modelItem => item.BrojDokumenta)
             </td>
             <td>
                 @Html.ActionLink("Izmeni", "Edit", new { id = item.GradjaninID }) |
                 @Html.ActionLink("Detalji", "Details", new { id = item.GradjaninID }) |
-                @Html.ActionLink("Obriši", "Delete", new { id = item.GradjaninID }) 
+                @Html.ActionLink("Obriši", "Delete", new { id = item.GradjaninID })
             </td>
         </tr>
     }
 
 </table>
-<div>@Html.ActionLink("Pocetna strana", "Index", "Home")</div>
+<div>@Html.ActionLink("Početna strana", "Index", "Home")</div>
+
+
+
+
+   
